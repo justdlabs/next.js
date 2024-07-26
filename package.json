@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@irsyadadl/paranoid": "^1.4.1",
+    "@irsyadadl/paranoid": "^1.4.2",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.17",
     "next": "14.2.5",
