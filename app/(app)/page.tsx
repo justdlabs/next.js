@@ -1,6 +1,6 @@
 import { Container } from '@/components/container'
 import { Header } from '@/components/header'
-import { Card, CardDescription, CardHeader, CardTitle, Grid, GridItem } from 'ui'
+import { Card, CardDescription, CardHeader, CardTitle, Grid, GridItem, Link } from 'ui'
 
 export default function Home() {
   return (
@@ -17,9 +17,10 @@ export default function Home() {
             sm: 2,
             lg: 3
           }}
-          className="[&_.xrkr:hover]:bg-tertiary"
+          className="[&_a]:cursor-pointer [&_a]:inset-0 [&_a]:absolute [&_a]:size-full [&_.grid-cell]:relative"
         >
-          <GridItem textValue="Justd" href="https://justd.co">
+          <GridItem>
+            <Link target="_blank" href="https://justd.co" aria-label="Justd" />
             <Card>
               <CardHeader>
                 <CardTitle>Just D.</CardTitle>
@@ -31,7 +32,8 @@ export default function Home() {
             </Card>
           </GridItem>
 
-          <GridItem textValue="Colors" href="https://justd.co/colors">
+          <GridItem>
+            <Link target="_blank" href="https://justd.co/colors" aria-label="Colors" />
             <Card>
               <CardHeader>
                 <CardTitle>Colors</CardTitle>
@@ -43,7 +45,8 @@ export default function Home() {
             </Card>
           </GridItem>
 
-          <GridItem textValue="Colors" href="https://paranoid.irsyad.co">
+          <GridItem>
+            <Link target="_blank" href="https://paranoid.irsyad.co" aria-label="Paranoid" />
             <Card>
               <CardHeader>
                 <CardTitle>Paranoid</CardTitle>
