@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2861607-d69f-42e8-8d22-ccb4c8a166ae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/theme-provider.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/next-starter-kit.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/checkbox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/checkbox.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/field.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/field.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/sheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/sheet.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/text-field.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/text-field.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/toast.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/toast.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +64,8 @@
       <option name="presentableId" value="Default" />
       <updated>1722760940481</updated>
       <workItem from="1722760942044" duration="381000" />
-      <workItem from="1722761344752" duration="108000" />
+      <workItem from="1722761344752" duration="259000" />
+      <workItem from="1722761700318" duration="25000" />
     </task>
     <servers />
   </component>

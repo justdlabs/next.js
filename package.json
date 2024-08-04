@@ -2,6 +2,7 @@
   "name": "justd-next",
   "version": "1.0.0",
   "private": true,
+  "repository": "https://github.com/justdlabs/next",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
