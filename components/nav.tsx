@@ -9,17 +9,7 @@ import { LayoutGroup, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 import { ListBox, ListBoxItem, ListBoxItemProps } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
-import {
-  Button,
-  buttonStyles,
-  Link,
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetOverlay,
-  SheetTitle,
-  useMediaQuery
-} from 'ui'
+import { Button, buttonStyles, Link, Sheet, SheetBody, SheetContent, SheetHeader, SheetTitle, useMediaQuery } from 'ui'
 
 const navigations = [
   {
@@ -108,19 +98,17 @@ function NavResponsive() {
       <Button size="small" appearance="outline">
         Menu
       </Button>
-      <SheetOverlay>
-        <SheetContent>
-          <div className="-mx-4 mb-4 -mt-4">
-            <SheetHeader className="text-left mb-0 p-4 border-b">
-              <SheetTitle className="text-sm flex items-center gap-2">
-                <IconBrandJustd />
-                Starter Kit
-              </SheetTitle>
-            </SheetHeader>
-          </div>
+      <SheetContent>
+        <SheetHeader className="text-left p-4 border-b">
+          <SheetTitle className="text-sm flex items-center gap-2">
+            <IconBrandJustd />
+            Starter Kit
+          </SheetTitle>
+        </SheetHeader>
+        <SheetBody className="-mx-2 pt-4">
           <NavContent />
-        </SheetContent>
-      </SheetOverlay>
+        </SheetBody>
+      </SheetContent>
     </Sheet>
   )
 }
@@ -133,7 +121,7 @@ function NavContent() {
       <ListBox
         orientation={isMobile ? 'vertical' : 'horizontal'}
         layout={isMobile ? 'stack' : 'grid'}
-        className="flex relative sm:flex-row flex-col sm:items-center gap-4 sm:gap-6"
+        className="flex relative sm:flex-row flex-col sm:items-center gap-3 sm:gap-6"
         items={navigations}
       >
         {(item) => (
