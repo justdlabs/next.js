@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { Toast } from 'ui'
 
-import './globals.css'
+import './styles/app.css'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',

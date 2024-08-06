@@ -61,12 +61,17 @@ export function Nav() {
           <div className="flex items-center gap-2 justify-end">
             <ThemeSwitcher />
             <Link
+              aria-label="GitHub"
               className={buttonStyles({ appearance: 'outline', size: 'square-petite' })}
               href="https://github.com/irsyadadl/next-starter-kit"
             >
               <IconBrandGithub />
             </Link>
-            <Link className={buttonStyles({ appearance: 'outline', size: 'square-petite' })} href="https://justd.co">
+            <Link
+              aria-label="Justd"
+              className={buttonStyles({ appearance: 'outline', size: 'square-petite' })}
+              href="https://justd.co"
+            >
               <IconBrandJustd />
             </Link>
             {isMobile && <NavResponsive />}
@@ -123,9 +128,11 @@ function NavContent() {
         layout={isMobile ? 'stack' : 'grid'}
         className="flex relative sm:flex-row flex-col sm:items-center gap-3 sm:gap-6"
         items={navigations}
+        aria-label="Navigation"
       >
         {(item) => (
           <NavLink
+            textValue={item.name}
             target={['Components', 'Colors', 'Icons'].includes(item.name) ? '_blank' : undefined}
             href={item.url}
             id={item.url}
