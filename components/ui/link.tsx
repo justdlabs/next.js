@@ -29,6 +29,7 @@ interface LinkProps extends LinkPrimitiveProps {
 const Link = ({ className, ...props }: LinkProps) => {
   return (
     <LinkPrimitive
+      aria-label={props['aria-label'] ?? 'Link'}
       {...props}
       className={composeRenderProps(className, (className, ...renderProps) =>
         linkStyles({ ...renderProps, intent: props.intent, className })
