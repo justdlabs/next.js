@@ -46,10 +46,10 @@ export default function Home() {
           </GridItem>
 
           <GridItem>
-            <Link target="_blank" href="https://paranoid.irsyad.co" aria-label="Paranoid" />
+            <Link target="_blank" href="https://getjustd.com/icons" aria-label="Icons" />
             <Card>
               <CardHeader>
-                <CardTitle>Paranoid</CardTitle>
+                <CardTitle>Icons</CardTitle>
                 <CardDescription>
                   A library of beautifully crafted react icons, perfect for enhancing the visual appeal and user
                   experience of your web applications.

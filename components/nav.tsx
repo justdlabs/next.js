@@ -4,8 +4,8 @@ import React, { useEffect } from 'react'
 
 import { Container } from '@/components/container'
 import { ThemeSwitcher } from '@/components/theme-switcher'
-import { IconBrandGithub, IconBrandJustd } from '@irsyadadl/paranoid'
 import { LayoutGroup, motion } from 'framer-motion'
+import { IconBrandGithub, IconBrandJustd } from 'justd-icons'
 import { usePathname } from 'next/navigation'
 import { ListBox, ListBoxItem, ListBoxItemProps } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
@@ -38,7 +38,7 @@ const navigations = [
   },
   {
     name: 'Icons',
-    url: 'https://paranoid.irsyad.co'
+    url: 'https://getjustd.com/icons'
   }
 ]
 
