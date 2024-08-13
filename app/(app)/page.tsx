@@ -1,6 +1,6 @@
 import { Container } from '@/components/container'
 import { Header } from '@/components/header'
-import { Card, CardDescription, CardHeader, CardTitle, Grid, GridItem, Link } from 'ui'
+import { Card, Grid, Link } from 'ui'
 
 export default function Home() {
   return (
@@ -19,44 +19,44 @@ export default function Home() {
           }}
           className="[&_a]:cursor-pointer [&_a]:inset-0 [&_a]:absolute [&_a]:size-full [&_.grid-cell]:relative"
         >
-          <GridItem>
+          <Grid.Item>
             <Link target="_blank" href="https://justd.co" aria-label="Justd" />
             <Card>
-              <CardHeader>
-                <CardTitle>Just D.</CardTitle>
-                <CardDescription>
+              <Card.Header>
+                <Card.Title>Just D.</Card.Title>
+                <Card.Description>
                   Just D. is a chill set of React components, built on top of React Aria Components, all about keeping
                   the web accessible.
-                </CardDescription>
-              </CardHeader>
+                </Card.Description>
+              </Card.Header>
             </Card>
-          </GridItem>
+          </Grid.Item>
 
-          <GridItem>
+          <Grid.Item>
             <Link target="_blank" href="https://justd.co/colors" aria-label="Colors" />
             <Card>
-              <CardHeader>
-                <CardTitle>Colors</CardTitle>
-                <CardDescription>
+              <Card.Header>
+                <Card.Title>Colors</Card.Title>
+                <Card.Description>
                   A stash of over 154 colors blending TailwindCSS vibes with HTML color names, served up in 8 slick
                   formats.
-                </CardDescription>
-              </CardHeader>
+                </Card.Description>
+              </Card.Header>
             </Card>
-          </GridItem>
+          </Grid.Item>
 
-          <GridItem>
+          <Grid.Item>
             <Link target="_blank" href="https://getjustd.com/icons" aria-label="Icons" />
             <Card>
-              <CardHeader>
-                <CardTitle>Icons</CardTitle>
-                <CardDescription>
+              <Card.Header>
+                <Card.Title>Icons</Card.Title>
+                <Card.Description>
                   A library of beautifully crafted react icons, perfect for enhancing the visual appeal and user
                   experience of your web applications.
-                </CardDescription>
-              </CardHeader>
+                </Card.Description>
+              </Card.Header>
             </Card>
-          </GridItem>
+          </Grid.Item>
         </Grid>
       </Container>
     </div>

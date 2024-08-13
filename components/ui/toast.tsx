@@ -3,11 +3,12 @@
 import React from 'react'
 
 import { useTheme } from '@/components/theme-provider'
-import { IconCheck, IconCircleInfoFill, IconLoader, IconTriangleInfoFill } from 'justd-icons'
+import { IconCheck, IconCircleInfoFill, IconTriangleInfoFill } from 'justd-icons'
 import { Toaster as ToasterPrimitive, type ToasterProps } from 'sonner'
 import { twJoin } from 'tailwind-merge'
 
 import { buttonStyles } from './button'
+import { Loader } from './loader'
 
 const Toast = ({ ...props }: ToasterProps) => {
   const { theme = 'system' } = useTheme()
@@ -20,7 +21,7 @@ const Toast = ({ ...props }: ToasterProps) => {
         success: <IconCheck />,
         warning: <IconTriangleInfoFill />,
         error: <IconTriangleInfoFill />,
-        loading: <IconLoader className="animate-spin size-4" />
+        loading: <Loader variant="spin" />
       }}
       toastOptions={{
         unstyled: true,
@@ -36,7 +37,7 @@ const Toast = ({ ...props }: ToasterProps) => {
             '[&>[data-action=true]]:right-4',
             '[&>[data-cancel=true]]:left-4'
           ),
-          icon: 'absolute top-1/2 -translate-y-1/2',
+          icon: 'absolute top-[1.50rem]',
           content: '[&:not(:has(+button))]:pr-10 [&:has(+button)]:pb-11 md:[&:has(+button)]:pb-9',
           error:
             'bg-danger text-white ring-white/10 text-danger-fg dark:ring-inset [&>[data-close-button=true]>svg]:text-white [&>[data-close-button=true]:hover]:bg-white/20',

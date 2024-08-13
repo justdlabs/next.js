@@ -3,7 +3,7 @@
 import { FormEvent } from 'react'
 
 import { toast } from 'sonner'
-import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle, Checkbox, Form, Link, TextField } from 'ui'
+import { Button, Card, Checkbox, Form, Link, TextField } from 'ui'
 
 export function LoginForm() {
   const submit = (e: FormEvent) => {
@@ -13,11 +13,11 @@ export function LoginForm() {
   }
   return (
     <Card className="sm:border-border border-transparent sm:rounded-xl rounded-none border-y-border">
-      <CardHeader>
-        <CardTitle>Login</CardTitle>
-        <CardDescription>Login to your account</CardDescription>
-      </CardHeader>
-      <CardContent>
+      <Card.Header>
+        <Card.Title>Login</Card.Title>
+        <Card.Description>Login to your account</Card.Description>
+      </Card.Header>
+      <Card.Content>
         <Form onSubmit={submit} className="space-y-6">
           <TextField label="Email" name="email" type="email" isRequired />
           <TextField label="Password" name="password" type="password" isRequired />
@@ -29,7 +29,7 @@ export function LoginForm() {
           </div>
           <Button type="submit">Login</Button>
         </Form>
-      </CardContent>
+      </Card.Content>
     </Card>
   )
 }
