@@ -23,6 +23,8 @@ const config = withTV({
         mono: ['var(--font-geist-mono)']
       },
       colors: {
+        dark: 'hsl(var(--dark))',
+        light: 'hsl(var(--light))',
         border: 'hsl(var(--border))',
         link: 'hsl(var(--link))',
         input: 'hsl(var(--input))',
@@ -48,6 +50,10 @@ const config = withTV({
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           fg: 'hsl(var(--secondary-fg))'
+        },
+        info: {
+          DEFAULT: 'hsl(var(--info))',
+          fg: 'hsl(var(--info-fg))'
         },
         tertiary: {
           DEFAULT: 'hsl(var(--tertiary))',

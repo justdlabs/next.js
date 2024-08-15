@@ -2,14 +2,10 @@
 
 import * as React from 'react'
 
-import {
-  Button as ButtonPrimitive,
-  type ButtonProps as ButtonPrimitiveProps,
-  composeRenderProps
-} from 'react-aria-components'
+import { Button as ButtonPrimitive, type ButtonProps as ButtonPrimitiveProps } from 'react-aria-components'
 import { tv } from 'tailwind-variants'
 
-import { focusButtonStyles } from './primitive'
+import { cr, focusButtonStyles } from './primitive'
 
 const buttonStyles = tv(
   {
@@ -64,7 +60,7 @@ const buttonStyles = tv(
         outline:
           'border-border hover:bg-secondary/90 active:bg-secondary/90 text-fg [--btn-icon:theme(colors.zinc.400)] active:[--btn-icon:theme(colors.zinc.500)] hover:[--btn-icon:theme(colors.zinc.500)] dark:active:[--btn-icon:theme(colors.zinc.300)] dark:hover:[--btn-icon:theme(colors.zinc.300)]',
         plain:
-          'border-transparent text-fg active:bg-fg/5 hover:bg-fg/5 [--btn-icon:theme(colors.zinc.500)] active:[--btn-icon:theme(colors.zinc.700)] hover:[--btn-icon:theme(colors.zinc.700)] dark:[--btn-icon:theme(colors.zinc.500)] dark:active:[--btn-icon:theme(colors.zinc.400)] dark:hover:[--btn-icon:theme(colors.zinc.400)]'
+          'border-transparent text-fg pressed:bg-secondary/90 active:bg-fg/5 hover:bg-fg/5 [--btn-icon:theme(colors.zinc.500)] active:[--btn-icon:theme(colors.zinc.700)] hover:[--btn-icon:theme(colors.zinc.700)] dark:[--btn-icon:theme(colors.zinc.500)] dark:active:[--btn-icon:theme(colors.zinc.400)] dark:hover:[--btn-icon:theme(colors.zinc.400)]'
       },
       size: {
         'extra-small':
@@ -132,7 +128,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <ButtonPrimitive
         ref={ref}
         {...props}
-        className={composeRenderProps(className, (className, renderProps) =>
+        className={cr(className, (className, renderProps) =>
           buttonStyles({
             ...renderProps,
             intent,
