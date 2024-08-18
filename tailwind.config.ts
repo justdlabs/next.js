@@ -30,7 +30,7 @@ const config = withTV({
         input: 'hsl(var(--input))',
         toggle: 'hsl(var(--toggle))',
         ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
+        bg: 'hsl(var(--bg))',
         fg: 'hsl(var(--fg))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
@@ -54,6 +54,10 @@ const config = withTV({
         info: {
           DEFAULT: 'hsl(var(--info))',
           fg: 'hsl(var(--info-fg))'
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          fg: 'hsl(var(--accent-fg))'
         },
         tertiary: {
           DEFAULT: 'hsl(var(--tertiary))',

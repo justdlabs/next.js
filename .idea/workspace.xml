@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2861607-d69f-42e8-8d22-ccb4c8a166ae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/(app)/resources.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(app)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/styles/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/checkbox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/checkbox.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/field.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/field.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/grid.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/heading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/heading.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/link.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/link.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/loader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/loader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/sheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/sheet.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/text-field.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/text-field.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.ts" afterDir="false" />
-    </list>
+    <list default="true" id="a2861607-d69f-42e8-8d22-ccb4c8a166ae" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +78,7 @@
       <workItem from="1723296208203" duration="223000" />
       <workItem from="1723392797525" duration="11000" />
       <workItem from="1723557606239" duration="531000" />
-      <workItem from="1723709512992" duration="387000" />
+      <workItem from="1723709512992" duration="956000" />
     </task>
     <servers />
   </component>
