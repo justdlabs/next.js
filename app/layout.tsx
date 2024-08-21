@@ -5,13 +5,13 @@ import { Toast } from 'ui'
 
 import './styles/app.css'
 
-const geistSans = localFont({
+const fontSans = localFont({
   src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans'
+  variable: '--font-sans'
 })
-const geistMono = localFont({
+const fontMono = localFont({
   src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono'
+  variable: '--font-mono'
 })
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-svh bg-tertiary font-sans`}>
+      <body className={`${fontSans.variable} ${fontMono.variable} antialiased min-h-svh bg-tertiary font-sans`}>
         <Toast />
         <Providers>{children}</Providers>
       </body>

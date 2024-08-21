@@ -19,8 +19,8 @@ const config = withTV({
     },
     extend: {
       fontFamily: {
-        sans: ['var(--font-geist-sans)'],
-        mono: ['var(--font-geist-mono)']
+        sans: ['var(--font-sans)', ...fontFamily.sans],
+        mono: ['var(--font-mono)', ...fontFamily.mono]
       },
       colors: {
         dark: 'hsl(var(--dark))',
@@ -89,12 +89,12 @@ const config = withTV({
         }
       },
       borderRadius: {
-        "3xl": "calc(var(--radius) + 7.5px)",
-        "2xl": "calc(var(--radius) + 5px)",
-        xl: "calc(var(--radius) + 2.5px)",
-        lg: "calc(var(--radius))",
-        md: "calc(var(--radius) - 2.5px)",
-        sm: "calc(var(--radius) - 5px)"
+        '3xl': 'calc(var(--radius) + 7.5px)',
+        '2xl': 'calc(var(--radius) + 5px)',
+        xl: 'calc(var(--radius) + 2.5px)',
+        lg: 'calc(var(--radius))',
+        md: 'calc(var(--radius) - 2.5px)',
+        sm: 'calc(var(--radius) - 5px)'
       },
       keyframes: {
         'accordion-down': {
