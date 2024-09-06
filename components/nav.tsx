@@ -83,10 +83,10 @@ export function Nav() {
 }
 
 const navStyles = tv({
-  base: 'text-sm relative py-0 sm:py-4 inline-flex focus:outline-none focus-visible:text-fg font-medium',
+  base: 'text-sm relative py-0 sm:py-4 inline-flex focus:outline-none focus-visible:text-fg',
   variants: {
     isCurrent: {
-      true: 'text-fg',
+      true: 'text-fg font-medium',
       false: 'text-muted-fg'
     }
   }
