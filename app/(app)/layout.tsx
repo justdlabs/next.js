@@ -6,7 +6,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <div>
       <Nav />
       {children}
-      <Footer/>
+      <Footer />
     </div>
   )
 }

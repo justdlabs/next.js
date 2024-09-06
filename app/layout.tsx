@@ -29,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${fontSans.variable} ${fontMono.variable} antialiased min-h-svh bg-tertiary font-sans`}>
+    <html lang="en" suppressHydrationWarning={true} className={`${fontSans.variable} ${fontMono.variable}`}>
+      <body className="antialiased min-h-svh bg-tertiary">
         <Toast />
         <Providers>{children}</Providers>
       </body>

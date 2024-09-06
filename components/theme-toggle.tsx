@@ -1,18 +1,18 @@
 'use client'
 
 import { IconDeviceDesktop, IconMoon, IconSun } from 'justd-icons'
-import { Button, cn } from 'ui'
 import { useTheme } from 'next-themes'
+import { Button, cn } from 'ui'
 
 export function ToggleTheme() {
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
 
   return (
     <div className="flex [&_button>[data-slot=icon]]:text-fg items-center gap-x-1 [&_svg]:size-4 [&_button]:rounded-full">
       <Button
         size="square-petite"
         appearance="plain"
-        className={cn(theme === 'light' ? 'bg-secondary' : 'bg-bg')}
+        className={cn(resolvedTheme === 'light' ? 'bg-secondary' : 'bg-bg')}
         aria-label="Switch to Light mode"
         onPress={() => setTheme('light')}
       >
@@ -22,7 +22,7 @@ export function ToggleTheme() {
       <Button
         size="square-petite"
         appearance="plain"
-        className={cn(theme === 'dark' ? 'bg-secondary' : 'bg-bg')}
+        className={cn(resolvedTheme === 'dark' ? 'bg-secondary' : 'bg-bg')}
         aria-label="Switch to Dark mode"
         onPress={() => setTheme('dark')}
       >
@@ -32,7 +32,7 @@ export function ToggleTheme() {
       <Button
         size="square-petite"
         appearance="plain"
-        className={cn(theme === 'system' ? 'bg-secondary' : 'bg-bg')}
+        className={cn(resolvedTheme === 'system' ? 'bg-secondary' : 'bg-bg')}
         aria-label="Switch to System mode"
         onPress={() => setTheme('system')}
       >

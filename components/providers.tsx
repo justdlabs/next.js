@@ -1,8 +1,9 @@
 'use client'
 
-import { ThemeProvider } from 'next-themes'
 import { useRouter } from 'next/navigation'
 import { RouterProvider } from 'react-aria-components'
+
+import { ThemeProvider } from './theme-provider'
 
 declare module 'react-aria-components' {
   interface RouterConfig {
@@ -15,7 +16,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <RouterProvider navigate={router.push}>
-      <ThemeProvider attribute="class">{children}</ThemeProvider>
+      <ThemeProvider>{children}</ThemeProvider>
     </RouterProvider>
   )
 }
