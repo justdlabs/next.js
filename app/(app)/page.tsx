@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="py-6">
       <Header
-        title="Just D. Starter Kit"
+        title="Justd Starter Kit"
         description="Next.js 14 Starter Kit with Tailwind CSS, TypeScript, React, React Aria Components, Justd Components, Framer Motion, and more."
       />
       <Resources />

@@ -1,4 +1,4 @@
-import { Container } from '@/components/container'
+import { Header } from '@/components/header'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="py-6">
-      <Container>About</Container>
+      <Header title="About" description="About Justd" />
     </div>
   )
 }

@@ -19,9 +19,9 @@ export function Resources() {
           <Link target="_blank" href="https://getjustd.com" aria-label="Justd" />
           <Card>
             <Card.Header>
-              <Card.Title>Just D.</Card.Title>
+              <Card.Title>Justd</Card.Title>
               <Card.Description>
-                Just D. is a chill set of React components, built on top of React Aria Components, all about keeping the
+                Justd is a chill set of React components, built on top of React Aria Components, all about keeping the
                 web accessible.
               </Card.Description>
             </Card.Header>
