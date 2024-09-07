@@ -158,9 +158,9 @@ export function Footer() {
             ))}
           </div>
           <p className="mt-8 text-xs leading-5 text-muted-fg md:order-1 md:mt-0">
-            &copy; 2020 Inertia.ts by{' '}
-            <Link target="_blank" href="https://twitter.com/irsyadadl" className="font-semibold text-fg">
-              irsyadadl
+            &copy; 2024 Next Starter Kit by{' '}
+            <Link target="_blank" href="https://getjustd.com" className="font-semibold text-fg">
+              justd
             </Link>
             , Inc. All rights reserved.
           </p>
