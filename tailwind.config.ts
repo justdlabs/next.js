@@ -1,14 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 import { withTV } from 'tailwind-variants/transformer'
-import { fontFamily } from 'tailwindcss/defaultTheme'
 
 const config = withTV({
   darkMode: ['class'],
-  content: [
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx,js,jsx,md,.mdx}',
-    './src/**/*.{ts,tsx,js,jsx,md,js,jsx,mdx}'
-  ],
+  content: ['./components/**/*.{ts,tsx,js,jsx}', './app/**/*.{ts,tsx,js,jsx}', './src/**/*.{ts,tsx,js,jsx}'],
   theme: {
     container: {
       center: true,
@@ -18,54 +13,51 @@ const config = withTV({
       }
     },
     extend: {
-      fontFamily: {
-        sans: ['var(--font-sans)', ...fontFamily.sans],
-        mono: ['var(--font-mono)', ...fontFamily.mono]
-      },
       colors: {
-        dark: 'hsl(var(--dark))',
         light: 'hsl(var(--light))',
+        dark: 'hsl(var(--dark))',
         border: 'hsl(var(--border))',
-        link: 'hsl(var(--link))',
         input: 'hsl(var(--input))',
-        toggle: 'hsl(var(--toggle))',
         ring: 'hsl(var(--ring))',
+        toggle: 'hsl(var(--toggle))',
         bg: 'hsl(var(--bg))',
         fg: 'hsl(var(--fg))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           fg: 'hsl(var(--primary-fg))',
-          '50': '#eef8ff',
-          '100': '#d8eeff',
-          '200': '#b9e0ff',
-          '300': '#89cfff',
-          '400': '#52b4ff',
-          '500': '#2a91ff',
-          '600': '#0d6efd',
-          '700': '#0c5ae9',
-          '800': '#1149bc',
-          '900': '#144194',
-          '950': '#11295a'
+          '50': 'hsl(204.7 99% 97%)',
+          '100': 'hsl(206.15 100% 92%)',
+          '200': 'hsl(206.57 99% 86%)',
+          '300': 'hsl(204.41 100% 77%)',
+          '400': 'hsl(206.02 100% 66%)',
+          '500': 'hsl(210.99 100% 57.99%)',
+          '600': 'hsl(215.79 98% 52%)',
+          '700': 'hsl(218.8 90% 48%)',
+          '800': 'hsl(220.35 84% 40%)',
+          '900': 'hsl(218.91 76% 33%)',
+          '950': 'hsl(220.26 68% 21%)'
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           fg: 'hsl(var(--secondary-fg))'
         },
-        info: {
-          DEFAULT: 'hsl(var(--info))',
-          fg: 'hsl(var(--info-fg))'
-        },
-        accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          fg: 'hsl(var(--accent-fg))'
-        },
         tertiary: {
           DEFAULT: 'hsl(var(--tertiary))',
           fg: 'hsl(var(--tertiary-fg))'
         },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          fg: 'hsl(var(--accent-fg))',
+          subtle: 'hsl(var(--accent-subtle))',
+          'subtle-fg': 'hsl(var(--accent-subtle-fg))'
+        },
         success: {
           DEFAULT: 'hsl(var(--success))',
           fg: 'hsl(var(--success-fg))'
+        },
+        info: {
+          DEFAULT: 'hsl(var(--info))',
+          fg: 'hsl(var(--info-fg))'
         },
         danger: {
           DEFAULT: 'hsl(var(--danger))',
@@ -82,10 +74,6 @@ const config = withTV({
         overlay: {
           DEFAULT: 'hsl(var(--overlay))',
           fg: 'hsl(var(--overlay-fg))'
-        },
-        card: {
-          DEFAULT: 'hsl(var(--card))',
-          header: 'hsl(var(--card-header))'
         }
       },
       borderRadius: {
@@ -95,20 +83,6 @@ const config = withTV({
         lg: 'calc(var(--radius))',
         md: 'calc(var(--radius) - 2.5px)',
         sm: 'calc(var(--radius) - 5px)'
-      },
-      keyframes: {
-        'accordion-down': {
-          from: { height: '0' },
-          to: { height: 'var(--radix-accordion-content-height)' }
-        },
-        'accordion-up': {
-          from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: '0' }
-        }
-      },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
       }
     }
   },

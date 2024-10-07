@@ -1,4 +1,8 @@
 {
-  "$schema": "https://justd.co",
-  "ui": "components/ui"
+  "$schema": "https://getjustd.com",
+  "ui": "components/ui",
+  "classes": "utils",
+  "theme": "Default",
+  "css": "app/globals.css",
+  "created_at": "2024-10-07T20:54:32.660Z"
 }

@@ -16,7 +16,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   return (
     <RouterProvider navigate={router.push}>
-      <ThemeProvider>{children}</ThemeProvider>
+      <ThemeProvider attribute="class">{children}</ThemeProvider>
     </RouterProvider>
   )
 }
