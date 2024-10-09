@@ -1,7 +1,8 @@
 import React from 'react'
 
 import { IconBrandFacebook, IconBrandGithub, IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from 'justd-icons'
-import { Button, Link, TextField } from 'ui'
+import Link from 'next/link'
+import { Button, TextField } from 'ui'
 
 import { ToggleTheme } from './theme-toggle'
 
@@ -148,6 +149,7 @@ export function Footer() {
           <div className="flex space-x-6 md:order-2">
             {navigation.social.map((item) => (
               <Link
+                aria-label={item.name}
                 key={item.name}
                 href={item.href}
                 className="text-muted-fg hover:text-fg [&>svg]:h-5 [&>svg]:w-5 [&>svg]:stroke-[1.5]"
