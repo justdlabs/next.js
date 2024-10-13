@@ -2,7 +2,6 @@
 
 import * as React from 'react'
 
-import { TouchTarget } from '@/components/ui/touch-target'
 import { TextInputDOMProps } from '@react-types/shared'
 import { IconEye, IconEyeClosed, IconLoader } from 'justd-icons'
 import {
@@ -73,13 +72,13 @@ const TextField = ({
             onPress={handleTogglePasswordVisibility}
             className="atrs relative isSfx x2e2 [&_[data-slot=icon]]:text-muted-fg focus:outline-none focus-visible:ring-1 focus-visible:ring-primary rounded"
           >
-            <TouchTarget>
+            <>
               {isPasswordVisible ? (
                 <IconEyeClosed className="transition animate-in" />
               ) : (
                 <IconEye className="transition animate-in" />
               )}
-            </TouchTarget>
+            </>
           </ButtonPrimitive>
         ) : isLoading && indicatorPlace === 'suffix' ? (
           <IconLoader className="animate-spin isSfx" />

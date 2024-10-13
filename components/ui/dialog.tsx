@@ -16,7 +16,6 @@ import { Button, type ButtonProps } from './button'
 import type { HeadingProps } from './heading'
 import { Heading } from './heading'
 import { useMediaQuery } from './primitive'
-import { TouchTarget } from './touch-target'
 
 const dialogStyles = tv({
   slots: {
@@ -51,9 +50,7 @@ type DialogHeaderProps = React.HTMLAttributes<HTMLDivElement> & {
 
 const Trigger = (props: ButtonPrimitiveProps) => (
   <ButtonPrimitive {...props}>
-    {(values) => (
-      <TouchTarget>{typeof props.children === 'function' ? props.children(values) : props.children}</TouchTarget>
-    )}
+    {(values) => <>{typeof props.children === 'function' ? props.children(values) : props.children}</>}
   </ButtonPrimitive>
 )
 
