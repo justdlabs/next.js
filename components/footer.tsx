@@ -1,59 +1,59 @@
-import React from 'react'
+import React from "react"
 
-import { IconBrandFacebook, IconBrandGithub, IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from 'justd-icons'
-import Link from 'next/link'
-import { Button, TextField } from 'ui'
+import { IconBrandFacebook, IconBrandGithub, IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from "justd-icons"
+import Link from "next/link"
+import { Button, TextField } from "ui"
 
-import { ToggleTheme } from './theme-toggle'
+import { ToggleTheme } from "./theme-toggle"
 
 const navigation = {
   solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' }
+    { name: "Marketing", href: "#" },
+    { name: "Analytics", href: "#" },
+    { name: "Commerce", href: "#" },
+    { name: "Insights", href: "#" }
   ],
   support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' }
+    { name: "Pricing", href: "#" },
+    { name: "Documentation", href: "#" },
+    { name: "Guides", href: "#" },
+    { name: "API Status", href: "#" }
   ],
   company: [
-    { name: 'About', href: '/about' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' }
+    { name: "About", href: "/about" },
+    { name: "Blog", href: "#" },
+    { name: "Jobs", href: "#" },
+    { name: "Press", href: "#" },
+    { name: "Partners", href: "#" }
   ],
   legal: [
-    { name: 'Privacy', href: '/privacy-policy' },
-    { name: 'Terms', href: '/terms-of-service' }
+    { name: "Privacy", href: "/privacy-policy" },
+    { name: "Terms", href: "/terms-of-service" }
   ],
   social: [
     {
-      name: 'Facebook',
-      href: '#',
+      name: "Facebook",
+      href: "#",
       icon: <IconBrandFacebook />
     },
     {
-      name: 'Instagram',
-      href: '#',
+      name: "Instagram",
+      href: "#",
       icon: <IconBrandInstagram />
     },
     {
-      name: 'Twitter',
-      href: '#',
+      name: "Twitter",
+      href: "#",
       icon: <IconBrandTwitter />
     },
     {
-      name: 'GitHub',
-      href: '#',
+      name: "GitHub",
+      href: "#",
       icon: <IconBrandGithub />
     },
     {
-      name: 'YouTube',
-      href: '#',
+      name: "YouTube",
+      href: "#",
       icon: <IconBrandYoutube />
     }
   ]
@@ -160,7 +160,7 @@ export function Footer() {
             ))}
           </div>
           <p className="mt-8 text-xs leading-5 text-muted-fg md:order-1 md:mt-0">
-            &copy; 2024 Next Starter Kit by{' '}
+            &copy; 2024 Next Starter Kit by{" "}
             <Link target="_blank" href="https://getjustd.com" className="font-semibold text-fg">
               justd
             </Link>

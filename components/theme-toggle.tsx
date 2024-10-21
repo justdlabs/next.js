@@ -1,8 +1,8 @@
-'use client'
+"use client"
 
-import { IconDeviceDesktop, IconMoon, IconSun } from 'justd-icons'
-import { useTheme } from 'next-themes'
-import { Button, cn } from 'ui'
+import { IconDeviceDesktop, IconMoon, IconSun } from "justd-icons"
+import { useTheme } from "next-themes"
+import { Button, cn } from "ui"
 
 export function ToggleTheme() {
   const { resolvedTheme, setTheme } = useTheme()
@@ -12,9 +12,9 @@ export function ToggleTheme() {
       <Button
         size="square-petite"
         appearance="plain"
-        className={cn(resolvedTheme === 'light' ? 'bg-secondary' : 'bg-bg')}
+        className={cn(resolvedTheme === "light" ? "bg-secondary" : "bg-bg")}
         aria-label="Switch to Light mode"
-        onPress={() => setTheme('light')}
+        onPress={() => setTheme("light")}
       >
         <IconSun />
       </Button>
@@ -22,9 +22,9 @@ export function ToggleTheme() {
       <Button
         size="square-petite"
         appearance="plain"
-        className={cn(resolvedTheme === 'dark' ? 'bg-secondary' : 'bg-bg')}
+        className={cn(resolvedTheme === "dark" ? "bg-secondary" : "bg-bg")}
         aria-label="Switch to Dark mode"
-        onPress={() => setTheme('dark')}
+        onPress={() => setTheme("dark")}
       >
         <IconMoon />
       </Button>
@@ -32,9 +32,9 @@ export function ToggleTheme() {
       <Button
         size="square-petite"
         appearance="plain"
-        className={cn(resolvedTheme === 'system' ? 'bg-secondary' : 'bg-bg')}
+        className={cn(resolvedTheme === "system" ? "bg-secondary" : "bg-bg")}
         aria-label="Switch to System mode"
-        onPress={() => setTheme('system')}
+        onPress={() => setTheme("system")}
       >
         <IconDeviceDesktop />
       </Button>

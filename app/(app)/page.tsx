@@ -1,6 +1,6 @@
-import { Header } from '@/components/header'
+import { Header } from "@/components/header"
 
-import { Resources } from './resources'
+import { Resources } from "./resources"
 
 export default function Home() {
   return (

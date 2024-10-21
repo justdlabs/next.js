@@ -1,15 +1,15 @@
-'use client'
+"use client"
 
-import { FormEvent } from 'react'
+import { FormEvent } from "react"
 
-import { toast } from 'sonner'
-import { Button, Card, Checkbox, Form, Link, TextField } from 'ui'
+import { toast } from "sonner"
+import { Button, Card, Checkbox, Form, Link, TextField } from "ui"
 
 export function LoginForm() {
   const submit = (e: FormEvent) => {
     e.preventDefault()
 
-    toast.success('Login Successful')
+    toast.success("Login Successful")
   }
   return (
     <Card className="sm:border-border border-transparent sm:rounded-xl rounded-none border-y-border">

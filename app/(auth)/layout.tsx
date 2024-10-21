@@ -1,5 +1,5 @@
-import { IconBrandJustd } from 'justd-icons'
-import { Link } from 'ui'
+import { IconBrandJustd } from "justd-icons"
+import { Link } from "ui"
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

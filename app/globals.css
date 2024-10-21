@@ -82,8 +82,8 @@
 
   * {
     @apply border-border;
-    font-feature-settings: 'cv11', 'ss01';
-    font-variation-settings: 'opsz' 850;
+    font-feature-settings: "cv11", "ss01";
+    font-variation-settings: "opsz" 850;
     text-rendering: optimizeLegibility;
     scrollbar-width: thin;
   }

@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
-import { Container } from '@/components/container'
-import { Card, Grid, Link } from 'ui'
+import { Container } from "@/components/container"
+import { Card, Grid, Link } from "ui"
 
 export function Resources() {
   return (
@@ -15,7 +15,7 @@ export function Resources() {
         }}
         className="[&_a]:cursor-pointer [&_a]:inset-0 [&_a]:absolute [&_a]:size-full [&_.grid-cell]:relative"
       >
-        <Grid.Item>
+        <div className="relative">
           <Link target="_blank" href="https://getjustd.com" aria-label="Justd" />
           <Card>
             <Card.Header>
@@ -26,9 +26,8 @@ export function Resources() {
               </Card.Description>
             </Card.Header>
           </Card>
-        </Grid.Item>
-
-        <Grid.Item>
+        </div>
+        <div className="relative">
           <Link target="_blank" href="https://getjustd.com/colors" aria-label="Colors" />
           <Card>
             <Card.Header>
@@ -39,9 +38,8 @@ export function Resources() {
               </Card.Description>
             </Card.Header>
           </Card>
-        </Grid.Item>
-
-        <Grid.Item>
+        </div>
+        <div className="relative">
           <Link target="_blank" href="https://getjustd.com/icons" aria-label="Icons" />
           <Card>
             <Card.Header>
@@ -52,7 +50,7 @@ export function Resources() {
               </Card.Description>
             </Card.Header>
           </Card>
-        </Grid.Item>
+        </div>
       </Grid>
     </Container>
   )
