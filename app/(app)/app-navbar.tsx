@@ -1,8 +1,24 @@
 "use client"
 
-import { IconBrandJustd, IconLogin, IconSearch } from "justd-icons"
+import React from "react"
+
+import { ThemeSwitcher } from "@/components/theme-switcher"
+import {
+  IconApple,
+  IconBrandGithub,
+  IconBrandJustd,
+  IconCallIncoming,
+  IconCallOff,
+  IconCallOutgoing,
+  IconColors,
+  IconContacts,
+  IconCube,
+  IconDevicePhone,
+  IconHome,
+  IconTelephone
+} from "justd-icons"
 import { usePathname } from "next/navigation"
-import { Button, buttonStyles, Link, Navbar } from "ui"
+import { buttonStyles, Link, Navbar } from "ui"
 
 export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Navbar>) {
   const pathname = usePathname()
@@ -14,33 +30,85 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
         </Navbar.Logo>
         <Navbar.Section>
           <Navbar.Item isCurrent={pathname === "/"} href="/">
+            <IconHome className="size-4 lg:hidden inline" />
             Home
           </Navbar.Item>
           <Navbar.Item isCurrent={pathname === "/about"} href="/about">
+            <IconApple className="size-4 lg:hidden inline" />
             About
           </Navbar.Item>
           <Navbar.Item isCurrent={pathname === "/contact"} href="/contact">
+            <IconTelephone className="size-4 lg:hidden inline" />
             Contact
           </Navbar.Item>
-        </Navbar.Section>
-        <Navbar.Section className="sm:ml-auto">
-          <Navbar.Item isCurrent={pathname === "/login"} href="/login">
-            Login
+          <Navbar.Item href="/components">
+            <IconCube />
+            Components
           </Navbar.Item>
+          <Navbar.Item href="/icons">
+            <IconBrandJustd />
+            Icons
+          </Navbar.Item>
+          <Navbar.Item href="/themes">
+            <IconColors />
+            Themes
+          </Navbar.Item>
+        </Navbar.Section>
+        <Navbar.Section className="sm:ml-auto lg:flex hidden">
+          <Navbar.Flex className="gap-1">
+            <ThemeSwitcher />
+            <Link
+              aria-label="Goto GitHub Repository"
+              className={buttonStyles({ appearance: "outline", size: "square-petite" })}
+              href="https://github.com/irsyadadl/next-starter-kit"
+            >
+              <IconBrandGithub />
+            </Link>
+            <Link
+              aria-label="Goto getjustd.com"
+              className={buttonStyles({ appearance: "outline", size: "square-petite" })}
+              href="https://justd.co"
+            >
+              <IconBrandJustd />
+            </Link>
+            <Navbar.Item
+              className={buttonStyles({ appearance: "outline", size: "small" })}
+              isCurrent={pathname === "/login"}
+              href="/login"
+            >
+              Login
+            </Navbar.Item>
+          </Navbar.Flex>
         </Navbar.Section>
       </Navbar.Nav>
       <Navbar.Compact>
         <Navbar.Flex>
           <Navbar.Trigger className="-ml-2" />
-        </Navbar.Flex>{" "}
+        </Navbar.Flex>
         <Navbar.Flex>
-          <Navbar.Flex>
-            <Button appearance="plain" size="square-petite" aria-label="Search for products">
-              <IconSearch />
-            </Button>
-            <Link className={buttonStyles({ appearance: "plain", size: "square-petite" })} aria-label="Login">
-              <IconLogin />
+          <Navbar.Flex className="gap-1">
+            <ThemeSwitcher />
+            <Link
+              aria-label="Goto GitHub Repository"
+              className={buttonStyles({ appearance: "outline", size: "square-petite" })}
+              href="https://github.com/irsyadadl/next-starter-kit"
+            >
+              <IconBrandGithub />
             </Link>
+            <Link
+              aria-label="Goto getjustd.com"
+              className={buttonStyles({ appearance: "outline", size: "square-petite" })}
+              href="https://justd.co"
+            >
+              <IconBrandJustd />
+            </Link>
+            <Navbar.Item
+              className={buttonStyles({ appearance: "outline", size: "small" })}
+              isCurrent={pathname === "/login"}
+              href="/login"
+            >
+              Login
+            </Navbar.Item>
           </Navbar.Flex>
         </Navbar.Flex>
       </Navbar.Compact>
