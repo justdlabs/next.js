@@ -41,15 +41,15 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
             <IconTelephone className="size-4 lg:hidden inline" />
             Contact
           </Navbar.Item>
-          <Navbar.Item href="/components">
+          <Navbar.Item target='_blank' href="https://getjustd.com/components">
             <IconCube />
             Components
           </Navbar.Item>
-          <Navbar.Item href="/icons">
+          <Navbar.Item target='_blank' href="https://getjustd.com/icons">
             <IconBrandJustd />
             Icons
           </Navbar.Item>
-          <Navbar.Item href="/themes">
+          <Navbar.Item target='_blank' href="https://getjustd.com/themes">
             <IconColors />
             Themes
           </Navbar.Item>
