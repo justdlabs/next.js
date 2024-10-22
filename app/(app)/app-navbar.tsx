@@ -3,20 +3,7 @@
 import React from "react"
 
 import { ThemeSwitcher } from "@/components/theme-switcher"
-import {
-  IconApple,
-  IconBrandGithub,
-  IconBrandJustd,
-  IconCallIncoming,
-  IconCallOff,
-  IconCallOutgoing,
-  IconColors,
-  IconContacts,
-  IconCube,
-  IconDevicePhone,
-  IconHome,
-  IconTelephone
-} from "justd-icons"
+import { IconApple, IconBrandGithub, IconBrandJustd, IconColors, IconCube, IconHome, IconTelephone } from "justd-icons"
 import { usePathname } from "next/navigation"
 import { buttonStyles, Link, Navbar } from "ui"
 

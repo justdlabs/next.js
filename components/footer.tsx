@@ -27,8 +27,8 @@ const navigation = {
     { name: "Partners", href: "#" }
   ],
   legal: [
-    { name: "Privacy", href: "/privacy-policy" },
-    { name: "Terms", href: "/terms-of-service" }
+    { name: "Privacy", href: "#" },
+    { name: "Terms", href: "#" }
   ],
   social: [
     {
