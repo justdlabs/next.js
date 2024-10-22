@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     default: "Justd Starter Kit with Next"
   },
   description:
-    "Next.js 14 Starter Kit with Tailwind CSS, TypeScript, React, React Aria Components, Justd Components, Framer Motion, and more."
+    "Next.js 15 Starter Kit with Tailwind CSS, TypeScript, React, React Aria Components, Justd Components, Framer Motion, and more."
 }
 
 export default function RootLayout({

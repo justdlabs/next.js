@@ -41,15 +41,15 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
             <IconTelephone className="size-4 lg:hidden inline" />
             Contact
           </Navbar.Item>
-          <Navbar.Item target='_blank' href="https://getjustd.com/components">
+          <Navbar.Item target="_blank" href="https://getjustd.com/components">
             <IconCube />
             Components
           </Navbar.Item>
-          <Navbar.Item target='_blank' href="https://getjustd.com/icons">
+          <Navbar.Item target="_blank" href="https://getjustd.com/icons">
             <IconBrandJustd />
             Icons
           </Navbar.Item>
-          <Navbar.Item target='_blank' href="https://getjustd.com/themes">
+          <Navbar.Item target="_blank" href="https://getjustd.com/themes">
             <IconColors />
             Themes
           </Navbar.Item>
@@ -60,6 +60,7 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
             <Link
               aria-label="Goto GitHub Repository"
               className={buttonStyles({ appearance: "outline", size: "square-petite" })}
+              target="_blank"
               href="https://github.com/irsyadadl/next-starter-kit"
             >
               <IconBrandGithub />
@@ -67,6 +68,7 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
             <Link
               aria-label="Goto getjustd.com"
               className={buttonStyles({ appearance: "outline", size: "square-petite" })}
+              target="_blank"
               href="https://justd.co"
             >
               <IconBrandJustd />
