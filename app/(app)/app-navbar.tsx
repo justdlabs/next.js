@@ -9,8 +9,11 @@ import { buttonStyles, Link, Navbar } from "ui"
 
 export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Navbar>) {
   const pathname = usePathname()
+
+  const [isOpen, setIsOpen] = React.useState(false)
+  React.useEffect(() => setIsOpen(false), [pathname])
   return (
-    <Navbar {...props}>
+    <Navbar isOpen={isOpen} onOpenChange={setIsOpen} {...props}>
       <Navbar.Nav>
         <Navbar.Logo className="text-fg" href="/">
           <IconBrandJustd />

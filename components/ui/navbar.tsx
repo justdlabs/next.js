@@ -22,8 +22,6 @@ type NavbarOptions = {
 type NavbarContextProps = {
   open: boolean
   setOpen: (open: boolean) => void
-  openCompact: boolean
-  setOpenCompact: (open: boolean) => void
   isCompact: boolean
   toggleNavbar: () => void
 } & NavbarOptions
@@ -67,7 +65,6 @@ const Navbar = ({
   intent = "navbar",
   ...props
 }: NavbarProviderProps) => {
-  const [openCompact, setOpenCompact] = React.useState(false)
   const isCompact = useMediaQuery("(max-width: 600px)")
   const [_open, _setOpen] = React.useState(defaultOpen)
   const open = openProp ?? _open
@@ -84,21 +81,20 @@ const Navbar = ({
   )
 
   const toggleNavbar = React.useCallback(() => {
-    return isCompact ? setOpenCompact((open) => !open) : setOpen((open) => !open)
-  }, [isCompact, setOpen, setOpenCompact])
+    setOpen((open) => !open)
+  }, [isCompact, setOpen])
+
   const contextValue = React.useMemo<NavbarContextProps>(
     () => ({
       open,
       setOpen,
       isCompact,
-      openCompact,
-      setOpenCompact,
       toggleNavbar,
       intent,
       isSticky,
       side
     }),
-    [open, setOpen, isCompact, openCompact, setOpenCompact, toggleNavbar, intent, isSticky, side]
+    [open, setOpen, isCompact, toggleNavbar, intent, isSticky, side]
   )
   return (
     <NavbarContext.Provider value={contextValue}>
@@ -130,11 +126,11 @@ interface NavbarProps extends React.ComponentProps<"div"> {
 }
 
 const Nav = ({ className, ...props }: NavbarProps) => {
-  const { isCompact, side, intent, isSticky, openCompact, setOpenCompact } = useNavbar()
+  const { isCompact, side, intent, isSticky, open, setOpen } = useNavbar()
 
   if (isCompact) {
     return (
-      <Sheet isOpen={openCompact} onOpenChange={setOpenCompact} {...props}>
+      <Sheet isOpen={open} onOpenChange={setOpen} {...props}>
         <Sheet.Content
           side={side}
           aria-label="Compact Navbar"
@@ -185,7 +181,7 @@ const Section = ({ className, ...props }: React.ComponentProps<"div">) => {
     <LayoutGroup id={id}>
       <div
         data-slot="navbar-section"
-        className={cn("flex", isCompact ? "flex-col gap-y-4" : "flex-row items-center gap-x-3", className)}
+        className={cn("flex", isCompact ? "flex-col gap-y-4" : "flex-row gap-x-3 items-center", className)}
         {...props}
       >
         {props.children}
@@ -240,7 +236,7 @@ const Logo = ({ className, ...props }: LinkProps) => {
   return (
     <Link
       className={cn(
-        "lg:mr-4 focus:outline-none focus-visible:outline-1 focus-visible:outline-primary px-2 py-4 lg:px-0 lg:py-0 hover:text-fg text-muted-fg",
+        "lg:mr-4 focus:outline-none flex items-center gap-x-2 focus-visible:outline-1 focus-visible:outline-primary px-2 py-4 lg:px-0 lg:py-0 text-fg",
         className
       )}
       {...props}
@@ -273,7 +269,7 @@ const insetStyles = tv({
   variants: {
     intent: {
       floating: "",
-      inset: "min-h-svh bg-tertiary lg:rounded-lg lg:shadow-sm lg:ring-1 lg:ring-dark/5 lg:dark:ring-light/10",
+      inset: "bg-tertiary lg:rounded-lg lg:shadow-sm lg:ring-1 lg:ring-dark/5 lg:dark:ring-light/10",
       navbar: ""
     }
   }
