@@ -13,6 +13,10 @@ const config = withTV({
       }
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"]
+      },
       colors: {
         light: "hsl(var(--light))",
         dark: "hsl(var(--dark))",
