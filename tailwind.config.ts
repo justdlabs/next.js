@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import { withTV } from "tailwind-variants/transformer"
 
-const config = withTV({
+const config = {
   darkMode: ["class"],
   content: ["./components/**/*.{ts,tsx,js,jsx}", "./app/**/*.{ts,tsx,js,jsx}", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
@@ -91,6 +91,6 @@ const config = withTV({
     }
   },
   plugins: [require("tailwindcss-animate"), require("tailwindcss-react-aria-components")]
-})
+}
 
 export default config
