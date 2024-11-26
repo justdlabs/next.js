@@ -2,13 +2,8 @@
 
 import * as React from "react"
 
-import type { DialogTriggerProps, ModalOverlayProps as ModalOverlayPrimitiveProps } from "react-aria-components"
-import {
-  type DialogProps,
-  DialogTrigger as DialogTriggerPrimitive,
-  Modal as ModalPrimitive,
-  ModalOverlay as ModalOverlayPrimitive
-} from "react-aria-components"
+import type { DialogProps, DialogTriggerProps, ModalOverlayProps } from "react-aria-components"
+import { DialogTrigger, Modal as ModalPrimitive, ModalOverlay as ModalOverlayPrimitive } from "react-aria-components"
 import { tv, type VariantProps } from "tailwind-variants"
 
 import { Dialog } from "./dialog"
@@ -70,13 +65,13 @@ const modalContentStyles = tv({
 })
 
 type ModalProps = DialogTriggerProps
-const Modal = ({ children, ...props }: ModalProps) => {
-  return <DialogTriggerPrimitive {...props}>{children}</DialogTriggerPrimitive>
+const Modal = (props: ModalProps) => {
+  return <DialogTrigger {...props} />
 }
 
 interface ModalContentProps
   extends Omit<React.ComponentProps<typeof Modal>, "children">,
-    Omit<ModalOverlayPrimitiveProps, "className">,
+    Omit<ModalOverlayProps, "className">,
     VariantProps<typeof modalContentStyles> {
   "aria-label"?: DialogProps["aria-label"]
   "aria-labelledby"?: DialogProps["aria-labelledby"]
@@ -84,8 +79,8 @@ interface ModalContentProps
   closeButton?: boolean
   isBlurred?: boolean
   classNames?: {
-    overlay?: ModalOverlayPrimitiveProps["className"]
-    content?: ModalOverlayPrimitiveProps["className"]
+    overlay?: ModalOverlayProps["className"]
+    content?: ModalOverlayProps["className"]
   }
 }
 
