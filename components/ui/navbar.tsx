@@ -6,7 +6,7 @@ import { cn } from "@/utils/classes"
 import { IconHamburger } from "justd-icons"
 import { LayoutGroup, motion } from "motion/react"
 import type { LinkProps } from "react-aria-components"
-import { Link, composeRenderProps } from "react-aria-components"
+import { composeRenderProps, Link } from "react-aria-components"
 import { tv } from "tailwind-variants"
 
 import { Button } from "./button"

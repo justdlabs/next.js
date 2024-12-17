@@ -1,23 +1,15 @@
 "use client"
 
 import { Container } from "@/components/container"
-import { Card, Grid, Link } from "ui"
+import { Card, Link } from "ui"
 
 export function Resources() {
   return (
     <Container>
-      <Grid
-        gap={6}
-        columns={{
-          initial: 1,
-          sm: 2,
-          lg: 3
-        }}
-        className="[&_a]:cursor-pointer [&_a]:inset-0 [&_a]:absolute [&_a]:size-full [&_.grid-cell]:relative"
-      >
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 [&_a]:cursor-pointer [&_a]:inset-0 [&_a]:absolute [&_a]:size-full [&_.grid-cell]:relative">
         <div className="relative">
           <Link target="_blank" href="https://getjustd.com" aria-label="Justd" />
-          <Card>
+          <Card className="bg-bg dark:bg-secondary/30 border-0 inset-ring inset-ring-fg/10 dark:inset-ring-fg/5 inset-shadow-xs inset-shadow-fg/10">
             <Card.Header>
               <Card.Title>Justd</Card.Title>
               <Card.Description>
@@ -29,7 +21,7 @@ export function Resources() {
         </div>
         <div className="relative">
           <Link target="_blank" href="https://getjustd.com/colors" aria-label="Colors" />
-          <Card>
+          <Card className="bg-bg dark:bg-secondary/30 border-0 inset-ring inset-ring-fg/10 dark:inset-ring-fg/5 inset-shadow-xs inset-shadow-fg/10">
             <Card.Header>
               <Card.Title>Colors</Card.Title>
               <Card.Description>
@@ -41,7 +33,7 @@ export function Resources() {
         </div>
         <div className="relative">
           <Link target="_blank" href="https://getjustd.com/icons" aria-label="Icons" />
-          <Card>
+          <Card className="bg-bg dark:bg-secondary/30 border-0 inset-ring inset-ring-fg/10 dark:inset-ring-fg/5 inset-shadow-xs inset-shadow-fg/10">
             <Card.Header>
               <Card.Title>Icons</Card.Title>
               <Card.Description>
@@ -51,7 +43,7 @@ export function Resources() {
             </Card.Header>
           </Card>
         </div>
-      </Grid>
+      </div>
     </Container>
   )
 }

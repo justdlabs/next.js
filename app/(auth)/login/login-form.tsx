@@ -12,7 +12,7 @@ export function LoginForm() {
     toast.success("Login Successful")
   }
   return (
-    <Card className="sm:border-border border-transparent sm:rounded-xl rounded-none border-y-border">
+    <Card className="relative border-0 ring ring-fg/10 dark:inset-ring-fg/5 inset-shadow-xs inset-shadow-fg/5">
       <Card.Header>
         <Card.Title>Login</Card.Title>
         <Card.Description>Login to your account</Card.Description>

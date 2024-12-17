@@ -4,14 +4,14 @@ import { cn } from "@/utils/classes"
 import { IconCheck } from "justd-icons"
 import {
   Collection,
+  composeRenderProps,
   Header,
   ListBoxItem as ListBoxItemPrimitive,
   type ListBoxItemProps,
   ListBoxSection,
   type SectionProps,
   Text,
-  type TextProps,
-  composeRenderProps
+  type TextProps
 } from "react-aria-components"
 import { tv } from "tailwind-variants"
 

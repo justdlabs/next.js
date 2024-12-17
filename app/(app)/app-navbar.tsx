@@ -3,9 +3,20 @@
 import React from "react"
 
 import { ThemeSwitcher } from "@/components/theme-switcher"
-import { IconApple, IconBrandGithub, IconBrandJustd, IconColors, IconCube, IconHome, IconTelephone } from "justd-icons"
+import {
+  IconApple,
+  IconArrowUpRight,
+  IconBrandGithub,
+  IconBrandJustd,
+  IconChevronDown,
+  IconColors,
+  IconColorSwatch,
+  IconCube,
+  IconHome,
+  IconTelephone
+} from "justd-icons"
 import { usePathname } from "next/navigation"
-import { buttonStyles, Link, Navbar } from "ui"
+import { buttonStyles, Link, Menu, Navbar } from "ui"
 
 export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Navbar>) {
   const pathname = usePathname()
@@ -13,7 +24,7 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
   const [isOpen, setIsOpen] = React.useState(false)
   React.useEffect(() => setIsOpen(false), [pathname])
   return (
-    <Navbar isOpen={isOpen} onOpenChange={setIsOpen} {...props}>
+    <Navbar isSticky isOpen={isOpen} onOpenChange={setIsOpen} {...props}>
       <Navbar.Nav>
         <Navbar.Logo className="text-fg" href="/">
           <IconBrandJustd />
@@ -31,27 +42,43 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
             <IconTelephone className="size-4 lg:hidden inline" />
             Contact
           </Navbar.Item>
-          <Navbar.Item target="_blank" href="https://getjustd.com/components">
-            <IconCube />
-            Components
-          </Navbar.Item>
-          <Navbar.Item target="_blank" href="https://getjustd.com/icons">
-            <IconBrandJustd />
-            Icons
-          </Navbar.Item>
-          <Navbar.Item target="_blank" href="https://getjustd.com/themes">
-            <IconColors />
-            Themes
-          </Navbar.Item>
+          <Menu>
+            <Navbar.Item className="group">
+              Resources...
+              <IconChevronDown className="duration-200 size-4 ml-2 group-data-pressed:rotate-180" />
+            </Navbar.Item>
+            <Menu.Content className="sm:min-w-48">
+              <Menu.Item target="_blank" href="https://getjustd.com/components">
+                <IconCube />
+                Components
+                <IconArrowUpRight className="ml-auto" />
+              </Menu.Item>
+              <Menu.Item target="_blank" href="https://getjustd.com/icons">
+                <IconBrandJustd />
+                Icons
+                <IconArrowUpRight className="ml-auto" />
+              </Menu.Item>
+              <Menu.Item target="_blank" href="https://getjustd.com/themes">
+                <IconColors />
+                Themes
+                <IconArrowUpRight className="ml-auto" />
+              </Menu.Item>
+              <Menu.Item target="_blank" href="https://getjustd.com/colors">
+                <IconColorSwatch />
+                Colors
+                <IconArrowUpRight className="ml-auto" />
+              </Menu.Item>
+            </Menu.Content>
+          </Menu>
         </Navbar.Section>
         <Navbar.Section className="sm:ml-auto lg:flex hidden">
-          <Navbar.Flex className="gap-1">
+          <Navbar.Flex className="gap-1 md:gap-1">
             <ThemeSwitcher />
             <Link
               aria-label="Goto GitHub Repository"
               className={buttonStyles({ appearance: "outline", size: "square-petite" })}
               target="_blank"
-              href="https://github.com/irsyadadl/next-starter-kit"
+              href="https://github.com/justdlabs/next.js"
             >
               <IconBrandGithub />
             </Link>
@@ -83,14 +110,14 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
             <Link
               aria-label="Goto GitHub Repository"
               className={buttonStyles({ appearance: "outline", size: "square-petite" })}
-              href="https://github.com/irsyadadl/next-starter-kit"
+              href="https://github.com/justdlabs/next.js"
             >
               <IconBrandGithub />
             </Link>
             <Link
               aria-label="Goto getjustd.com"
               className={buttonStyles({ appearance: "outline", size: "square-petite" })}
-              href="https://justd.co"
+              href="https://getjustd.com"
             >
               <IconBrandJustd />
             </Link>
