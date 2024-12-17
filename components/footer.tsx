@@ -137,7 +137,7 @@ export function Footer() {
                   isRequired
                   placeholder="Enter your email"
                 />
-                <div className="mt-6 sm:ml-2 sm:mt-0 sm:flex-shrink-0">
+                <div className="mt-6 sm:ml-2 sm:mt-0 sm:shrink-0">
                   <Button type="submit">Subscribe</Button>
                 </div>
               </form>

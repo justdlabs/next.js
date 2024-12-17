@@ -1,8 +1,9 @@
 "use client"
 
+import { cn } from "@/utils/classes"
 import { IconDeviceDesktop, IconMoon, IconSun } from "justd-icons"
 import { useTheme } from "next-themes"
-import { Button, cn } from "ui"
+import { Button } from "ui"
 
 export function ToggleTheme() {
   const { theme, setTheme } = useTheme()
