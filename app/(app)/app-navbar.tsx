@@ -72,7 +72,7 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
           </Menu>
         </Navbar.Section>
         <Navbar.Section className="sm:ml-auto lg:flex hidden">
-          <Navbar.Flex className="gap-1 md:gap-1">
+          <Navbar.Flex className="gap-1 md:gap-1td">
             <ThemeSwitcher />
             <Link
               aria-label="Goto GitHub Repository"

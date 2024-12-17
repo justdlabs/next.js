@@ -1,10 +1,9 @@
 "use client"
 
-import { useMediaQuery } from "@/utils/use-media-query"
 import type {
   DialogTriggerProps,
   ModalOverlayProps,
-  PopoverProps as PopoverPrimitiveProps
+  PopoverProps as PopoverPrimitiveProps,
 } from "react-aria-components"
 import {
   type DialogProps,
@@ -15,11 +14,12 @@ import {
   PopoverContext,
   Popover as PopoverPrimitive,
   composeRenderProps,
-  useSlottedContext
+  useSlottedContext,
 } from "react-aria-components"
-import { twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
 
+import { useMediaQuery } from "@/utils/use-media-query"
+import { twMerge } from "tailwind-merge"
 import { Dialog } from "./dialog"
 
 const Popover = ({ children, ...props }: DialogTriggerProps) => {
@@ -27,7 +27,10 @@ const Popover = ({ children, ...props }: DialogTriggerProps) => {
 }
 
 const Title = ({ level = 2, className, ...props }: React.ComponentProps<typeof Dialog.Title>) => (
-  <Dialog.Title className={twMerge("sm:leading-none", level === 2 && "sm:text-lg", className)} {...props} />
+  <Dialog.Title
+    className={twMerge("sm:leading-none", level === 2 && "sm:text-lg", className)}
+    {...props}
+  />
 )
 
 const Header = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => (
@@ -44,51 +47,51 @@ const Body = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => 
 
 const content = tv({
   base: [
-    "max-w-xs transition-transform peer-not-has-[data=dialog-header]:p-4 rounded-xl border bg-overlay bg-clip-padding text-overlay-fg shadow-xs dark:backdrop-saturate-200 sm:text-sm sm:max-w-3xl forced-colors:bg-[Canvas] [&::-webkit-scrollbar]:size-0.5 [scrollbar-width:thin]"
+    "max-w-xs transition-transform peer-not-has-[data=dialog-header]:p-4 rounded-xl border bg-overlay bg-clip-padding text-overlay-fg shadow-xs dark:backdrop-saturate-200 sm:text-sm sm:max-w-3xl forced-colors:bg-[Canvas] [&::-webkit-scrollbar]:size-0.5 [scrollbar-width:thin]",
   ],
   variants: {
     isPicker: { true: "max-h-72 min-w-(--trigger-width) overflow-y-auto p-0", false: "min-w-80" },
     isMenu: {
       true: {
-        true: "p-0"
-      }
+        true: "p-0",
+      },
     },
     isEntering: {
       true: [
         "duration-100 ease-out animate-in fade-in",
-        "data-[placement=left]:slide-in-from-right-1 data-[placement=right]:slide-in-from-left-1 data-[placement=top]:slide-in-from-bottom-1 data-[placement=bottom]:slide-in-from-top-1"
-      ]
+        "data-[placement=left]:slide-in-from-right-1 data-[placement=right]:slide-in-from-left-1 data-[placement=top]:slide-in-from-bottom-1 data-[placement=bottom]:slide-in-from-top-1",
+      ],
     },
     isExiting: {
       true: [
         "duration-50 ease-in animate-out fade-out",
-        "data-[placement=left]:slide-out-to-right-1 data-[placement=right]:slide-out-to-left-1 data-[placement=top]:slide-out-to-bottom-1 data-[placement=bottom]:slide-out-to-top-1"
-      ]
-    }
-  }
+        "data-[placement=left]:slide-out-to-right-1 data-[placement=right]:slide-out-to-left-1 data-[placement=top]:slide-out-to-bottom-1 data-[placement=bottom]:slide-out-to-top-1",
+      ],
+    },
+  },
 })
 
 const drawer = tv({
   base: [
-    "fixed max-h-full bottom-0 top-auto z-50 w-full bg-overlay max-w-2xl border border-b-transparent outline-hidden"
+    "fixed max-h-full bottom-0 top-auto z-50 w-full bg-overlay max-w-2xl border border-b-transparent outline-hidden",
   ],
   variants: {
     isMenu: {
       true: "p-0 [&_[role=dialog]]:*:not-has-[[data-slot=dialog-body]]:px-1 rounded-t-xl",
-      false: "py-4 rounded-t-2xl"
+      false: "py-4 rounded-t-2xl",
     },
     isEntering: {
       true: [
         "[will-change:transform] [transition:transform_0.5s_cubic-bezier(0.32,_0.72,_0,_1)]",
         "animate-in duration-200 fade-in-0 slide-in-from-bottom-56",
         "[transition:translate3d(0,_100%,_0)]",
-        "sm:slide-in-from-bottom-auto sm:slide-in-from-top-[20%]"
-      ]
+        "sm:slide-in-from-bottom-auto sm:slide-in-from-top-[20%]",
+      ],
     },
     isExiting: {
-      true: "duration-200 ease-in animate-out slide-out-to-bottom-56"
-    }
-  }
+      true: "duration-200 ease-in animate-out slide-out-to-bottom-56",
+    },
+  },
 })
 
 interface PopoverProps
@@ -104,7 +107,13 @@ interface PopoverProps
   className?: string | ((values: { defaultClassName?: string }) => string)
 }
 
-const Content = ({ respectScreen = true, children, showArrow = true, className, ...props }: PopoverProps) => {
+const Content = ({
+  respectScreen = true,
+  children,
+  showArrow = true,
+  className,
+  ...props
+}: PopoverProps) => {
   const isMobile = useMediaQuery("(max-width: 600px)")
   const popoverContext = useSlottedContext(PopoverContext)!
   const isMenuTrigger = popoverContext?.trigger === "MenuTrigger"
@@ -120,7 +129,7 @@ const Content = ({ respectScreen = true, children, showArrow = true, className, 
     >
       <Modal
         className={composeRenderProps(className, (className, renderProps) =>
-          drawer({ ...renderProps, isMenu, className })
+          drawer({ ...renderProps, isMenu, className }),
         )}
       >
         <Dialog
@@ -139,8 +148,8 @@ const Content = ({ respectScreen = true, children, showArrow = true, className, 
       className={composeRenderProps(className, (className, renderProps) =>
         content({
           ...renderProps,
-          className
-        })
+          className,
+        }),
       )}
     >
       {showArrow && (
@@ -168,8 +177,8 @@ const Picker = ({ children, className, ...props }: PopoverProps) => {
         content({
           ...renderProps,
           isPicker: true,
-          className
-        })
+          className,
+        }),
       )}
     >
       {children}

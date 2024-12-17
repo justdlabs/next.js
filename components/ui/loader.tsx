@@ -15,19 +15,19 @@ const loaderStyles = tv({
       secondary: "text-muted-fg",
       success: "text-success",
       warning: "text-warning",
-      danger: "text-danger"
+      danger: "text-danger",
     },
     size: {
       small: "size-4",
       medium: "size-6",
       large: "size-8",
-      "extra-large": "size-10"
-    }
+      "extra-large": "size-10",
+    },
   },
   defaultVariants: {
     intent: "current",
-    size: "small"
-  }
+    size: "small",
+  },
 })
 
 type LoaderVariantProps = VariantProps<typeof loaderStyles>
@@ -167,7 +167,7 @@ const Spin = ({ className, ...props }: React.SVGProps<SVGSVGElement>) => (
 const LOADERS = {
   bars: Bars,
   ring: Ring,
-  spin: Spin
+  spin: Spin,
 }
 
 const DEFAULT_SPINNER = "ring"
@@ -200,8 +200,8 @@ const Loader = ({ isIndeterminate = true, ref, ...props }: LoaderProps) => {
           className: cn([
             ["ring"].includes(variant) && "animate-spin",
             variant === "spin" && "stroke-current",
-            className
-          ])
+            className,
+          ]),
         })}
         ref={ref}
         {...spinnerProps}
