@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2861607-d69f-42e8-8d22-ccb4c8a166ae" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(app)/app-navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/app-navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(app)/resources.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(app)/resources.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(auth)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(auth)/login/login-form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(auth)/login/login-form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bun.lockb" beforeDir="false" afterPath="$PROJECT_DIR$/bun.lockb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/grid.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ui/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/ui/index.ts" afterDir="false" />
-    </list>
+    <list default="true" id="a2861607-d69f-42e8-8d22-ccb4c8a166ae" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +122,7 @@
       <workItem from="1732355148453" duration="3179000" />
       <workItem from="1734393647179" duration="25000" />
       <workItem from="1734393847060" duration="1131000" />
-      <workItem from="1734417673488" duration="979000" />
+      <workItem from="1734417673488" duration="1163000" />
     </task>
     <servers />
   </component>

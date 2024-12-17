@@ -17,14 +17,14 @@ import type {
 import {
   Button,
   Collection,
-  composeRenderProps,
   Header,
-  Menu as MenuPrimitive,
   MenuItem,
+  Menu as MenuPrimitive,
   MenuSection,
   MenuTrigger as MenuTriggerPrimitive,
   Separator,
-  SubmenuTrigger as SubmenuTriggerPrimitive
+  SubmenuTrigger as SubmenuTriggerPrimitive,
+  composeRenderProps
 } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
 import { tv } from "tailwind-variants"

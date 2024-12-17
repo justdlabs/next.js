@@ -3,14 +3,15 @@
 import { createContext, use, useCallback, useId, useMemo, useState } from "react"
 
 import { cn } from "@/utils/classes"
+import { useMediaQuery } from "@/utils/use-media-query"
 import { IconHamburger } from "justd-icons"
 import { LayoutGroup, motion } from "motion/react"
 import type { LinkProps } from "react-aria-components"
-import { composeRenderProps, Link } from "react-aria-components"
+import { Link, composeRenderProps } from "react-aria-components"
 import { tv } from "tailwind-variants"
 
 import { Button } from "./button"
-import { composeTailwindRenderProps, useMediaQuery } from "./primitive"
+import { composeTailwindRenderProps } from "./primitive"
 import { Sheet } from "./sheet"
 
 type NavbarOptions = {
