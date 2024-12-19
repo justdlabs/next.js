@@ -1,5 +1,5 @@
 {
-  "name": "justd-next",
+  "name": "justd-next-starter-kit",
   "version": "1.0.0",
   "private": true,
   "repository": "https://github.com/justdlabs/next",
@@ -9,7 +9,9 @@
     "start": "next start",
     "format": "prettier --write .",
     "lint": "next lint",
-    "preview": "next build && next start"
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy"
   },
   "dependencies": {
     "@types/react": "^19.0.1",
@@ -30,6 +32,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.7",
     "@tailwindcss/postcss": "^4.0.0-beta.7",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/node": "^22.10.2",
