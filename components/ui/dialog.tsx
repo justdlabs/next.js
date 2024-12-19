@@ -2,38 +2,30 @@
 
 import { useEffect, useRef } from "react"
 
+import { useMediaQuery } from "@/utils/use-media-query"
 import { IconX } from "justd-icons"
-import type {
-  ButtonProps as ButtonPrimitiveProps,
-  DialogProps,
-  HeadingProps,
-} from "react-aria-components"
-import {
-  Button as ButtonPrimitive,
-  Dialog as DialogPrimitive,
-  Heading,
-} from "react-aria-components"
+import type { ButtonProps as ButtonPrimitiveProps, DialogProps, HeadingProps } from "react-aria-components"
+import { Button as ButtonPrimitive, Dialog as DialogPrimitive, Heading } from "react-aria-components"
 import { tv } from "tailwind-variants"
 
-import { useMediaQuery } from "@/utils/use-media-query"
 import { Button, type ButtonProps } from "./button"
 
 const dialogStyles = tv({
   slots: {
     root: [
-      "relative peer group/dialog flex max-h-[inherit] not-has-data-[slot=dialog-body]:**:data-[slot=dialog-header]:pb-0 [&::-webkit-scrollbar]:size-0.5 [scrollbar-width:thin] flex-col overflow-hidden outline-hidden",
+      "relative peer group/dialog flex max-h-[inherit] not-has-data-[slot=dialog-body]:**:data-[slot=dialog-header]:pb-0 [&::-webkit-scrollbar]:size-0.5 [scrollbar-width:thin] flex-col overflow-hidden outline-hidden"
     ],
     header: "relative flex flex-col gap-0.5 sm:gap-1 p-4 sm:p-6",
     description: "text-sm text-muted-fg",
     body: [
       "has-[input]:pb-1",
       "flex flex-1 isolate flex-col overflow-auto px-4 sm:px-6",
-      "max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))]",
+      "max-h-[calc(var(--visual-viewport-height)-var(--visual-viewport-vertical-padding)-var(--dialog-header-height,0px)-var(--dialog-footer-height,0px))]"
     ],
     footer: "mt-auto flex isolate flex-col-reverse justify-between gap-3 sm:flex-row p-4 sm:p-6",
     closeIndicator:
-      "close absolute right-1 top-1 sm:right-2 sm:top-2 data-focused:outline-hidden data-focused:bg-secondary data-hovered:bg-secondary grid place-content-center rounded-xl sm:rounded-md data-focus-visible:ring-1 data-focus-visible:ring-primary size-8 sm:size-7 z-50",
-  },
+      "close absolute right-1 top-1 sm:right-2 sm:top-2 data-focused:outline-hidden data-focused:bg-secondary data-hovered:bg-secondary grid place-content-center rounded-xl sm:rounded-md data-focus-visible:ring-1 data-focus-visible:ring-primary size-8 sm:size-7 z-50"
+  }
 })
 
 const { root, header, description, body, footer, closeIndicator } = dialogStyles()
@@ -60,10 +52,7 @@ const Header = ({ className, ...props }: DialogHeaderProps) => {
 
     const observer = new ResizeObserver((entries) => {
       for (const entry of entries) {
-        header.parentElement?.style.setProperty(
-          "--dialog-header-height",
-          `${entry.target.clientHeight}px`,
-        )
+        header.parentElement?.style.setProperty("--dialog-header-height", `${entry.target.clientHeight}px`)
       }
     })
 
@@ -87,9 +76,9 @@ const titleStyles = tv({
       1: "font-semibold text-lg sm:text-xl",
       2: "font-semibold text-lg sm:text-xl",
       3: "font-semibold text-base sm:text-lg",
-      4: "font-semibold text-base",
-    },
-  },
+      4: "font-semibold text-base"
+    }
+  }
 })
 
 interface TitleProps extends Omit<HeadingProps, "level"> {
@@ -120,10 +109,7 @@ const Footer = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) =
 
     const observer = new ResizeObserver((entries) => {
       for (const entry of entries) {
-        footer.parentElement?.style.setProperty(
-          "--dialog-footer-height",
-          `${entry.target.clientHeight}px`,
-        )
+        footer.parentElement?.style.setProperty("--dialog-footer-height", `${entry.target.clientHeight}px`)
       }
     })
 
@@ -132,9 +118,7 @@ const Footer = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) =
       observer.unobserve(footer)
     }
   }, [])
-  return (
-    <div ref={footerRef} data-slot="dialog-footer" className={footer({ className })} {...props} />
-  )
+  return <div ref={footerRef} data-slot="dialog-footer" className={footer({ className })} {...props} />
 }
 
 const Close = ({ className, appearance = "outline", ...props }: ButtonProps) => {

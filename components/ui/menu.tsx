@@ -2,6 +2,8 @@
 
 import { createContext, use } from "react"
 
+import { composeTailwindRenderProps } from "@/components/ui/primitive"
+import { cn } from "@/utils/classes"
 import { IconBulletFill, IconCheck, IconChevronLgRight } from "justd-icons"
 import type {
   ButtonProps,
@@ -10,7 +12,7 @@ import type {
   MenuSectionProps,
   MenuTriggerProps as MenuTriggerPrimitiveProps,
   PopoverProps,
-  SeparatorProps,
+  SeparatorProps
 } from "react-aria-components"
 import {
   Button,
@@ -22,13 +24,11 @@ import {
   MenuTrigger as MenuTriggerPrimitive,
   Separator,
   SubmenuTrigger as SubmenuTriggerPrimitive,
-  composeRenderProps,
+  composeRenderProps
 } from "react-aria-components"
 import type { VariantProps } from "tailwind-variants"
 import { tv } from "tailwind-variants"
 
-import { composeTailwindRenderProps } from "@/components/ui/primitive"
-import { cn } from "@/utils/classes"
 import { DropdownItemDetails, dropdownItemStyles, dropdownSectionStyles } from "./dropdown"
 import { Keyboard } from "./keyboard"
 import { Popover } from "./popover"
@@ -62,9 +62,9 @@ const menuStyles = tv({
     menu: "max-h-[calc(var(--visual-viewport-height)-10rem)] sm:max-h-[inherit] overflow-auto rounded-xl p-1 outline-hidden [clip-path:inset(0_0_0_0_round_calc(var(--radius-lg)-2px))]",
     popover: "z-50 sm:min-w-40 p-0 outline-hidden shadow-xs",
     trigger: [
-      "inline relative text-left data-focused:outline-hidden data-focus-visible:ring-1 data-focus-visible:ring-primary data-pressed:outline-hidden",
-    ],
-  },
+      "inline relative text-left data-focused:outline-hidden data-focus-visible:ring-1 data-focus-visible:ring-primary data-pressed:outline-hidden"
+    ]
+  }
 })
 
 const { menu, popover, trigger } = menuStyles()
@@ -75,15 +75,11 @@ interface MenuTriggerProps extends ButtonProps {
 
 const Trigger = ({ className, ...props }: MenuTriggerProps) => (
   <Button data-slot="menu-trigger" className={trigger({ className })} {...props}>
-    {(values) => (
-      <>{typeof props.children === "function" ? props.children(values) : props.children}</>
-    )}
+    {(values) => <>{typeof props.children === "function" ? props.children(values) : props.children}</>}
   </Button>
 )
 
-interface MenuContentProps<T>
-  extends Omit<PopoverProps, "children" | "style">,
-    MenuPrimitiveProps<T> {
+interface MenuContentProps<T> extends Omit<PopoverProps, "children" | "style">, MenuPrimitiveProps<T> {
   className?: string
   popoverClassName?: string
   showArrow?: boolean
@@ -104,8 +100,8 @@ const Content = <T extends object>({
       className={popover({
         className: cn([
           showArrow && "data-[placement=left]:mt-[-0.38rem] data-[placement=right]:mt-[-0.38rem]",
-          popoverClassName,
-        ]),
+          popoverClassName
+        ])
       })}
       {...props}
     >
@@ -125,8 +121,8 @@ const Item = ({ className, isDanger = false, children, ...props }: MenuItemProps
       className={composeRenderProps(className, (className, renderProps) =>
         dropdownItemStyles({
           ...renderProps,
-          className,
-        }),
+          className
+        })
       )}
       textValue={textValue}
       data-danger={isDanger ? "true" : undefined}
@@ -151,7 +147,7 @@ const MenuHeader = ({ className, separator = false, ...props }: MenuHeaderProps)
     className={cn(
       "p-2 font-semibold text-base sm:text-sm",
       separator && "-mx-1 border-b px-4 py-3 sm:px-3 sm:pb-[0.625rem]",
-      className,
+      className
     )}
     {...props}
   />
