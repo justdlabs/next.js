@@ -1,9 +1,9 @@
 {
-  "$schema": "https://getjustd.com/schema.json",
-  "ui": "components/ui",
-  "utils": "utils",
-  "gray": "zinc",
-  "css": "app/globals.css",
-  "alias": "@",
-  "classes": "utils"
+	"$schema": "https://getjustd.com/schema.json",
+	"ui": "components/ui",
+	"utils": "utils",
+	"gray": "zinc",
+	"css": "app/globals.css",
+	"alias": "@",
+	"classes": "utils"
 }

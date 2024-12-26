@@ -1,0 +1,79 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.3/schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"files": {
+		"ignore": ["**/*.js", ".vercel", ".next"]
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"style": {
+				"noNonNullAssertion": "off",
+				"useImportType": "error"
+			},
+			"complexity": {
+				"useArrowFunction": "error"
+			},
+			"a11y": {
+				"useSemanticElements": "off",
+				"useAnchorContent": "off",
+				"noSvgWithoutTitle": "off"
+			},
+			"correctness": {
+				"useExhaustiveDependencies": "off",
+				"useHookAtTopLevel": "error",
+				"noUnusedImports": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off",
+				"noArrayIndexKey": "off",
+				"noConsoleLog": "warn"
+			},
+			"nursery": {
+				"useSortedClasses": {
+					"level": "error",
+					"fix": "safe",
+					"options": {
+						"attributes": ["classList"],
+						"functions": [
+							"cn",
+							"tv",
+							"twMerge",
+							"twJoin",
+							"composeRenderProps",
+							"composeTailwindRenderProps"
+						]
+					}
+				}
+			}
+		},
+		"ignore": ["node_modules", ".next", "dist"]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"indentWidth": 4,
+		"lineWidth": 120,
+		"ignore": ["node_modules", ".next", "dist"]
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double",
+			"arrowParentheses": "always",
+			"bracketSameLine": false,
+			"bracketSpacing": true,
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"semicolons": "asNeeded",
+			"trailingCommas": "all"
+		}
+	},
+	"json": {
+		"formatter": {
+			"trailingCommas": "none"
+		}
+	}
+}
