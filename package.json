@@ -7,8 +7,8 @@
 		"dev": "next dev --turbopack",
 		"build": "next build",
 		"start": "next start",
-		"format": "bun run lint && biome format --write",
-		"lint": "biome lint --fix",
+		"lint": "next lint &&  biome lint --fix",
+    "format": "bun run lint && biome format --write",
 		"pages:build": "npx @cloudflare/next-on-pages",
 		"preview": "npm run pages:build && wrangler pages dev",
 		"deploy": "npm run pages:build && wrangler pages deploy"
