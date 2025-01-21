@@ -4,5 +4,6 @@
 	"utils": "utils",
 	"gray": "zinc",
 	"css": "app/globals.css",
-	"alias": "@"
+	"alias": "@",
+	"language": "typescript"
 }
