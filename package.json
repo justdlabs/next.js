@@ -7,10 +7,9 @@
 		"dev": "next dev --turbopack",
 		"build": "next build",
 		"start": "next start",
-		"lint": "biome lint --fix",
-		"format": "bun run lint && biome format --write",
+		"format": "biome lint --fix && biome format --write",
 		"pages:build": "npx @cloudflare/next-on-pages",
-		"preview": "npm run pages:build && wrangler pages dev",
+		"preview": "next build && next start",
 		"deploy": "npm run pages:build && wrangler pages deploy"
 	},
 	"dependencies": {
@@ -20,7 +19,7 @@
 		"embla-carousel-react": "^8.5.2",
 		"input-otp": "^1.4.2",
 		"justd-icons": "^1.10.24",
-		"motion": "^12.4.1",
+		"motion": "^12.4.2",
 		"next": "^15.1.6",
 		"next-themes": "^0.4.4",
 		"react": "^19.0.0",
@@ -31,7 +30,7 @@
 		"tailwindcss-animate": "^1.0.7"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
+		"@biomejs/biome": "1.9.4",
 		"@cloudflare/next-on-pages": "^1.13.7",
 		"@tailwindcss/postcss": "^4.0.4",
 		"@types/node": "^22.13.1",
