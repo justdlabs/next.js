@@ -1,42 +1,42 @@
 {
-	"name": "next-js",
-	"version": "1.0.0",
-	"private": true,
-	"repository": "https://github.com/justdlabs/next",
-	"scripts": {
-		"dev": "next dev --turbopack",
-		"build": "next build",
-		"start": "next start",
-		"format": "biome lint --fix && biome format --write",
-		"pages:build": "npx @cloudflare/next-on-pages",
-		"preview": "next build && next start",
-		"deploy": "npm run pages:build && wrangler pages deploy"
-	},
-	"dependencies": {
-		"@types/react": "^19.0.8",
-		"@types/react-dom": "^19.0.3",
-		"cmdk": "^1.0.4",
-		"embla-carousel-react": "^8.5.2",
-		"input-otp": "^1.4.2",
-		"justd-icons": "^1.10.25",
-		"motion": "^12.4.2",
-		"next": "^15.1.7",
-		"next-themes": "^0.4.4",
-		"react": "^19.0.0",
-		"react-aria-components": "^1.6.0",
-		"react-dom": "^19.0.0",
-		"sonner": "^1.7.4",
-		"tailwind-merge": "^3.0.1",
-		"tailwindcss-animate": "^1.0.7"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.9.4",
-		"@cloudflare/next-on-pages": "^1.13.7",
-		"@tailwindcss/postcss": "^4.0.6",
-		"@types/node": "^22.13.1",
-		"postcss": "^8.5.2",
-		"tailwind-variants": "^0.3.1",
-		"tailwindcss": "^4.0.6",
-		"typescript": "^5.7.3"
-	}
+  "name": "next-js",
+  "version": "1.0.0",
+  "private": true,
+  "repository": "https://github.com/justdlabs/next",
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "format": "biome lint --fix . && biome format --write .",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "next build && next start",
+    "deploy": "npm run pages:build && wrangler pages deploy"
+  },
+  "dependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "cmdk": "^1.0.4",
+    "embla-carousel-react": "^8.5.2",
+    "input-otp": "^1.4.2",
+    "justd-icons": "^1.10.25",
+    "motion": "^12.4.7",
+    "next": "^15.1.7",
+    "next-themes": "^0.4.4",
+    "react": "^19.0.0",
+    "react-aria-components": "^1.6.0",
+    "react-dom": "^19.0.0",
+    "sonner": "^1.7.4",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@cloudflare/next-on-pages": "^1.13.8",
+    "@tailwindcss/postcss": "^4.0.7",
+    "@types/node": "^22.13.4",
+    "postcss": "^8.5.3",
+    "tailwind-variants": "^0.3.1",
+    "tailwindcss": "^4.0.7",
+    "typescript": "^5.7.3"
+  }
 }
