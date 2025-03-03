@@ -9,7 +9,7 @@ export function ThemeSwitcher() {
 
 	return (
 		<Button
-			appearance="outline"
+			intent="outline"
 			size="square-petite"
 			aria-label="Switch theme"
 			onPress={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}

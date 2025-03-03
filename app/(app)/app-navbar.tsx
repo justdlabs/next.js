@@ -76,7 +76,7 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
 						<ThemeSwitcher />
 						<Link
 							aria-label="Goto GitHub Repository"
-							className={buttonStyles({ appearance: "outline", size: "square-petite" })}
+							className={buttonStyles({ intent: "outline", size: "square-petite" })}
 							target="_blank"
 							href="https://github.com/justdlabs/next.js"
 						>
@@ -84,14 +84,14 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
 						</Link>
 						<Link
 							aria-label="Goto getjustd.com"
-							className={buttonStyles({ appearance: "outline", size: "square-petite" })}
+							className={buttonStyles({ intent: "outline", size: "square-petite" })}
 							target="_blank"
 							href="https://justd.co"
 						>
 							<IconBrandJustd />
 						</Link>
 						<Navbar.Item
-							className={buttonStyles({ appearance: "outline", size: "small" })}
+							className={buttonStyles({ intent: "outline", size: "small" })}
 							isCurrent={pathname === "/login"}
 							href="/login"
 						>
@@ -109,20 +109,20 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
 						<ThemeSwitcher />
 						<Link
 							aria-label="Goto GitHub Repository"
-							className={buttonStyles({ appearance: "outline", size: "square-petite" })}
+							className={buttonStyles({ intent: "outline", size: "square-petite" })}
 							href="https://github.com/justdlabs/next.js"
 						>
 							<IconBrandGithub />
 						</Link>
 						<Link
 							aria-label="Goto getjustd.com"
-							className={buttonStyles({ appearance: "outline", size: "square-petite" })}
+							className={buttonStyles({ intent: "outline", size: "square-petite" })}
 							href="https://getjustd.com"
 						>
 							<IconBrandJustd />
 						</Link>
 						<Navbar.Item
-							className={buttonStyles({ appearance: "outline", size: "small" })}
+							className={buttonStyles({ intent: "outline", size: "small" })}
 							isCurrent={pathname === "/login"}
 							href="/login"
 						>

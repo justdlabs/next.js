@@ -16,6 +16,10 @@ const buttonStyles = tv({
 		"forced-colors:[--btn-icon:ButtonText] forced-colors:data-hovered:[--btn-icon:ButtonText]",
 		"*:data-[slot=icon]:-mx-0.5 data-hovered:*:data-[slot=icon]:text-current/90 data-pressed:*:data-[slot=icon]:text-current *:data-[slot=icon]:my-1 *:data-[slot=icon]:size-4 *:data-[slot=icon]:shrink-0 *:data-[slot=icon]:text-current/60 *:data-[slot=icon]:transition",
 		"*:data-[slot=avatar]:-mx-0.5 *:data-[slot=avatar]:my-1 *:data-[slot=avatar]:*:size-4 *:data-[slot=avatar]:size-4 *:data-[slot=avatar]:shrink-0",
+		"inset-ring-0 dark:inset-ring dark:border-0",
+		"inset-ring-(--btn-border) inset-shadow-2xs border-(--btn-border) bg-(--btn-bg) text-(--btn-fg)",
+		"data-hovered:bg-(--btn-bg-hovered) data-hovered:ring-(--btn-border-hovered)",
+		"data-pressed:border-(--btn-border) data-pressed:bg-(--btn-bg)",
 	],
 	variants: {
 		intent: {
@@ -44,19 +48,14 @@ const buttonStyles = tv({
 				"[--btn-bg-hovered:var(--btn-danger-hovered)] [--btn-border-hovered:var(--btn-danger-hovered)]",
 				"inset-shadow-danger-fg/30 data-hovered:inset-shadow-danger-fg/35 data-pressed:inset-shadow-danger-fg/30",
 			],
-		},
-		appearance: {
-			solid: [
-				"inset-ring-0 dark:inset-ring dark:border-0",
-				"inset-ring-(--btn-border) inset-shadow-2xs border-(--btn-border) bg-(--btn-bg) text-(--btn-fg)",
-				"data-hovered:bg-(--btn-bg-hovered) data-hovered:ring-(--btn-border-hovered)",
-				"data-pressed:border-(--btn-border) data-pressed:bg-(--btn-bg)",
+			outline: [
+				"inset-ring-0 inset-shadow-none [--btn-border:var(--color-border)] data-hovered:bg-secondary data-pressed:bg-secondary",
 			],
-			outline: ["border data-hovered:bg-secondary data-pressed:bg-secondary"],
-			plain: ["border-transparent data-hovered:bg-secondary data-pressed:bg-secondary"],
+			plain: "inset-ring-0 inset-shadow-none [--btn-border:transparent] data-hovered:bg-secondary data-pressed:bg-secondary",
 		},
 		size: {
-			"extra-small": "h-8 px-[calc(var(--spacing)*2.7)] text-xs/4 lg:text-[0.800rem]/4",
+			"extra-small":
+				"h-8 px-[calc(var(--spacing)*2.7)] text-xs/4 **:data-[slot=avatar]:*:size-3.5 **:data-[slot=avatar]:size-3.5 **:data-[slot=icon]:size-3 lg:text-[0.800rem]/4",
 			small: "h-9 px-3.5 text-sm/5 sm:text-sm/5",
 			medium: "h-10 px-4 text-base sm:text-sm/6",
 			large: "h-11 px-4.5 text-base *:data-[slot=icon]:mx-[-1.5px] sm:*:data-[slot=icon]:size-5 lg:text-base/7",
@@ -76,21 +75,19 @@ const buttonStyles = tv({
 	},
 	defaultVariants: {
 		intent: "primary",
-		appearance: "solid",
 		size: "medium",
 		shape: "square",
 	},
 })
 
 interface ButtonProps extends ButtonPrimitiveProps {
-	intent?: "primary" | "secondary" | "danger" | "warning"
+	intent?: "primary" | "secondary" | "danger" | "warning" | "outline" | "plain"
 	size?: "medium" | "large" | "square-petite" | "extra-small" | "small"
 	shape?: "square" | "circle"
-	appearance?: "solid" | "outline" | "plain"
 	ref?: React.Ref<HTMLButtonElement>
 }
 
-const Button = ({ className, intent, appearance, size, shape, ref, ...props }: ButtonProps) => {
+const Button = ({ className, intent, size, shape, ref, ...props }: ButtonProps) => {
 	return (
 		<ButtonPrimitive
 			ref={ref}
@@ -99,7 +96,6 @@ const Button = ({ className, intent, appearance, size, shape, ref, ...props }: B
 				buttonStyles({
 					...renderProps,
 					intent,
-					appearance,
 					size,
 					shape,
 					className,
