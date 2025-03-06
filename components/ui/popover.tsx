@@ -1,12 +1,12 @@
 "use client"
 
 import type {
+	DialogProps,
 	DialogTriggerProps,
 	ModalOverlayProps,
 	PopoverProps as PopoverPrimitiveProps,
 } from "react-aria-components"
 import {
-	type DialogProps,
 	DialogTrigger,
 	Modal,
 	ModalOverlay,
@@ -118,6 +118,7 @@ const PopoverContent = ({
 	const isMenuTrigger = popoverContext?.trigger === "MenuTrigger"
 	const isSubmenuTrigger = popoverContext?.trigger === "SubmenuTrigger"
 	const isMenu = isMenuTrigger || isSubmenuTrigger
+	const isComboBoxTrigger = popoverContext?.trigger === "ComboBox"
 	const offset = showArrow ? 12 : 8
 	const effectiveOffset = isSubmenuTrigger ? offset - 5 : offset
 	return isMobile && respectScreen ? (
@@ -131,7 +132,7 @@ const PopoverContent = ({
 					drawer({ ...renderProps, isMenu, className }),
 				)}
 			>
-				<Dialog role="dialog" aria-label={props["aria-label"] || isMenu ? "Menu" : undefined}>
+				<Dialog role="dialog" aria-label={props["aria-label"] ?? "List item"}>
 					{children}
 				</Dialog>
 			</Modal>
@@ -159,9 +160,13 @@ const PopoverContent = ({
 					</svg>
 				</OverlayArrow>
 			)}
-			<Dialog role="dialog" aria-label={props["aria-label"] || isMenu ? "Menu" : undefined}>
-				{children}
-			</Dialog>
+			{!isComboBoxTrigger ? (
+				<Dialog role="dialog" aria-label={props["aria-label"] ?? "List item"}>
+					{children}
+				</Dialog>
+			) : (
+				children
+			)}
 		</PopoverPrimitive>
 	)
 }

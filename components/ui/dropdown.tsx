@@ -2,17 +2,14 @@
 
 import { cn } from "@/utils/classes"
 import { IconCheck } from "justd-icons"
+import type { ListBoxItemProps, SectionProps, SeparatorProps, TextProps } from "react-aria-components"
 import {
 	Collection,
 	Header,
 	ListBoxItem as ListBoxItemPrimitive,
-	type ListBoxItemProps,
 	ListBoxSection,
-	type SectionProps,
 	Separator,
-	type SeparatorProps,
 	Text,
-	type TextProps,
 	composeRenderProps,
 } from "react-aria-components"
 import { tv } from "tailwind-variants"
@@ -72,10 +69,9 @@ const DropdownSection = <T extends object>({ className, ...props }: DropdownSect
 type DropdownItemProps = ListBoxItemProps
 
 const DropdownItem = ({ className, ...props }: DropdownItemProps) => {
-	const textValue = props.textValue || (typeof props.children === "string" ? props.children : undefined)
 	return (
 		<ListBoxItemPrimitive
-			textValue={textValue}
+			textValue={typeof props.children === "string" ? props.children : props.textValue}
 			className={composeRenderProps(className, (className, renderProps) =>
 				dropdownItemStyles({ ...renderProps, className }),
 			)}
@@ -124,11 +120,11 @@ const DropdownItemDetails = ({ label, description, classNames, ...props }: Dropd
 	)
 }
 
-interface MenuLabelProps extends TextProps {
+interface DropdownLabelProps extends TextProps {
 	ref?: React.Ref<HTMLDivElement>
 }
 
-const DropdownLabel = ({ className, ref, ...props }: MenuLabelProps) => (
+const DropdownLabel = ({ className, ref, ...props }: DropdownLabelProps) => (
 	<Text slot="label" ref={ref} className={cn("col-start-2", className)} {...props} />
 )
 
@@ -148,7 +144,7 @@ const DropdownKeyboard = ({ className, ...props }: React.ComponentProps<typeof K
  * Note: This is not exposed component, but it's used in other components to render dropdowns.
  * @internal
  */
-export type { DropdownSectionProps, DropdownItemProps, DropdownItemDetailProps }
+export type { DropdownSectionProps, DropdownLabelProps, DropdownItemProps, DropdownItemDetailProps }
 export {
 	DropdownSeparator,
 	DropdownItem,
