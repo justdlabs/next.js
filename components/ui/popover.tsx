@@ -18,7 +18,6 @@ import {
 } from "react-aria-components"
 import { tv } from "tailwind-variants"
 
-import { cn } from "@/utils/classes"
 import { useMediaQuery } from "@/utils/use-media-query"
 import { twMerge } from "tailwind-merge"
 import type { DialogBodyProps, DialogFooterProps, DialogHeaderProps, DialogTitleProps } from "./dialog"
@@ -38,11 +37,11 @@ const PopoverHeader = ({ className, ...props }: DialogHeaderProps) => (
 )
 
 const PopoverFooter = ({ className, ...props }: DialogFooterProps) => (
-	<Dialog.Footer className={cn("sm:p-4", className)} {...props} />
+	<Dialog.Footer className={twMerge("sm:p-4", className)} {...props} />
 )
 
 const PopoverBody = ({ className, ref, ...props }: DialogBodyProps) => (
-	<Dialog.Body ref={ref} className={cn("sm:px-4 sm:pt-0", className)} {...props} />
+	<Dialog.Body ref={ref} className={twMerge("sm:px-4 sm:pt-0", className)} {...props} />
 )
 
 const content = tv({

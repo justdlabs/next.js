@@ -1,9 +1,9 @@
 "use client"
 
-import { cn } from "@/utils/classes"
 import { IconDeviceDesktop, IconMoon, IconSun } from "justd-icons"
 import { useTheme } from "next-themes"
 import { Button } from "ui"
+import { twJoin } from "tailwind-merge"
 
 export function ToggleTheme() {
 	const { theme, setTheme } = useTheme()
@@ -13,7 +13,7 @@ export function ToggleTheme() {
 			<Button
 				size="square-petite"
 				intent="plain"
-				className={cn(theme === "light" ? "bg-secondary" : "bg-bg")}
+				className={twJoin(theme === "light" ? "bg-secondary" : "bg-bg")}
 				aria-label="Switch to Light mode"
 				onPress={() => setTheme("light")}
 			>
@@ -23,7 +23,7 @@ export function ToggleTheme() {
 			<Button
 				size="square-petite"
 				intent="plain"
-				className={cn(theme === "dark" ? "bg-secondary" : "bg-bg")}
+				className={twJoin(theme === "dark" ? "bg-secondary" : "bg-bg")}
 				aria-label="Switch to Dark mode"
 				onPress={() => setTheme("dark")}
 			>
@@ -33,7 +33,7 @@ export function ToggleTheme() {
 			<Button
 				size="square-petite"
 				intent="plain"
-				className={cn(theme === "system" ? "bg-secondary" : "bg-bg")}
+				className={twJoin(theme === "system" ? "bg-secondary" : "bg-bg")}
 				aria-label="Switch to System mode"
 				onPress={() => setTheme("system")}
 			>

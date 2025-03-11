@@ -1,6 +1,4 @@
 "use client"
-
-import { cn } from "@/utils/classes"
 import { IconCheck } from "justd-icons"
 import type { ListBoxItemProps, SectionProps, SeparatorProps, TextProps } from "react-aria-components"
 import {
@@ -12,6 +10,7 @@ import {
 	Text,
 	composeRenderProps,
 } from "react-aria-components"
+import { twMerge } from "tailwind-merge"
 import { tv } from "tailwind-variants"
 import { Keyboard } from "./keyboard"
 
@@ -20,9 +19,9 @@ const dropdownItemStyles = tv({
 		"col-span-full grid grid-cols-[auto_1fr_1.5rem_0.5rem_auto] not-has-data-[slot=dropdown-item-details]:items-center has-data-[slot=dropdown-item-details]:**:data-[slot=checked-icon]:mt-[1.5px] supports-[grid-template-columns:subgrid]:grid-cols-subgrid",
 		"group relative cursor-default select-none rounded-[calc(var(--radius-lg)-1px)] px-[calc(var(--spacing)*2.3)] py-[calc(var(--spacing)*1.3)] forced-color:text-[Highlight] text-base text-fg outline-0 forced-color-adjust-none sm:text-sm/6 forced-colors:text-[LinkText]",
 		"**:data-[slot=avatar]:*:mr-2 **:data-[slot=avatar]:*:size-6 **:data-[slot=avatar]:mr-2 **:data-[slot=avatar]:size-6 sm:**:data-[slot=avatar]:*:size-5 sm:**:data-[slot=avatar]:size-5",
-		"data-danger:**:data-[slot=icon]:text-danger/60 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0 **:data-[slot=icon]:text-muted-fg data-focused:data-danger:**:data-[slot=icon]:text-danger",
+		"data-danger:**:data-[slot=icon]:text-danger/60 **:data-[slot=icon]:size-4 **:data-[slot=icon]:shrink-0 **:data-[slot=icon]:text-muted-fg focus:data-danger:**:data-[slot=icon]:text-danger",
 		"data-[slot=menu-radio]:*:data-[slot=icon]:size-3 *:data-[slot=icon]:mr-2",
-		"forced-colors:**:data-[slot=icon]:text-[CanvasText] forced-colors:group-data-focused:**:data-[slot=icon]:text-[Canvas] ",
+		"forced-colors:**:data-[slot=icon]:text-[CanvasText] forced-colors:group-focus:**:data-[slot=icon]:text-[Canvas] ",
 		"[&>[slot=label]+[data-slot=icon]]:absolute [&>[slot=label]+[data-slot=icon]]:right-0",
 	],
 	variants: {
@@ -102,14 +101,18 @@ const DropdownItemDetails = ({ label, description, classNames, ...props }: Dropd
 	return (
 		<div data-slot="dropdown-item-details" className="col-start-2 flex flex-col gap-y-1" {...restProps}>
 			{label && (
-				<Text slot={slot ?? "label"} className={cn("font-medium sm:text-sm", classNames?.label)} {...restProps}>
+				<Text
+					slot={slot ?? "label"}
+					className={twMerge("font-medium sm:text-sm", classNames?.label)}
+					{...restProps}
+				>
 					{label}
 				</Text>
 			)}
 			{description && (
 				<Text
 					slot={slot ?? "description"}
-					className={cn("text-muted-fg text-xs", classNames?.description)}
+					className={twMerge("text-muted-fg text-xs", classNames?.description)}
 					{...restProps}
 				>
 					{description}
@@ -125,19 +128,19 @@ interface DropdownLabelProps extends TextProps {
 }
 
 const DropdownLabel = ({ className, ref, ...props }: DropdownLabelProps) => (
-	<Text slot="label" ref={ref} className={cn("col-start-2", className)} {...props} />
+	<Text slot="label" ref={ref} className={twMerge("col-start-2", className)} {...props} />
 )
 
 const DropdownSeparator = ({ className, ...props }: SeparatorProps) => (
 	<Separator
 		orientation="horizontal"
-		className={cn("-mx-1 col-span-full my-1 h-px bg-border", className)}
+		className={twMerge("-mx-1 col-span-full my-1 h-px bg-border", className)}
 		{...props}
 	/>
 )
 
 const DropdownKeyboard = ({ className, ...props }: React.ComponentProps<typeof Keyboard>) => {
-	return <Keyboard className={cn("absolute right-2 pl-2", className)} {...props} />
+	return <Keyboard className={twMerge("absolute right-2 pl-2", className)} {...props} />
 }
 
 /**
