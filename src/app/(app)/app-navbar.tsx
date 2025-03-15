@@ -42,6 +42,15 @@ export function AppNavbar({ children, ...props }: React.ComponentProps<typeof Na
 						<IconTelephone className="inline size-4 lg:hidden" />
 						Contact
 					</Navbar.Item>
+					<Navbar.Item
+						target="_blank"
+						href="https://blocks.getjustd.com"
+						className="text-primary hover:text-primary/90"
+					>
+						<IconTelephone className="inline size-4 lg:hidden" />
+						Blocks
+						<IconArrowUpRight />
+					</Navbar.Item>
 					<Menu>
 						<Navbar.Item className="group">
 							Resources...
